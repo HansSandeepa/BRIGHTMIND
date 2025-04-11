@@ -1,0 +1,323 @@
+:root{
+    --main-color: #ffbe00;
+    --font-color: #000;
+    --login-btn-color: #02ce1a;
+    --header-width: 100%;
+    --header-height: 120px;
+}
+
+
+
+header{
+    background-color: rgba(255, 190, 0, 0.53);
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    justify-content: space-between;
+    width: var(--header-width);
+    height: var(--header-height);
+    align-items: center;
+}
+
+#headerWrapper{
+    width: var(--header-width);
+    height: var(--header-height);
+}
+/* login and sign in buttons section */
+#loginBtnSection{
+    display: block;
+    margin-right: 30px;
+    margin-left: -50px;
+}
+
+#loginBtnSection > a{
+    text-decoration: none;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 600;
+    background-color: inherit;
+    color: var(--font-color);
+    border: 3px solid var(--font-color);
+    border-radius: 10px;
+    font-size: large;
+    padding-block: 5px;
+    padding-inline: 15px;
+    margin-right: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+#loginBtnSection > a:hover{
+    background-color: var(--login-btn-color);
+    color: white;
+    border-color:  var(--login-btn-color);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),
+                0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* logo section */
+.logo{
+    display: inline-grid;
+}
+
+.logoImg{
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logoText{
+    font-family: Kaushan Script;
+    margin: 0;
+    font-size: 25px;
+}
+
+#topLogo{
+    margin-left: 20px;
+}
+/* navigation button */
+#navbarBtn{
+    background-color: initial;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+#navbarBtn > img{
+    width: 40px;
+    transition: background-color 0.4s ease-in-out;
+    border-radius: 5px;
+}
+
+#navbarBtn > img:hover{
+    background-color: white;
+
+}
+
+/* footer design */
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-color);
+    padding-top: 20px;
+}
+
+.footerTitles{
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 10px;
+    margin-top: 1px;
+}
+
+/* logo inside the footer */
+#bottomLogo{
+    margin-left: -20px;
+}
+
+/* navigation links */
+#footerNavigation{
+    width: 300px;
+    text-align: center;
+}
+
+.footerNavigationLinks{
+    display: inline-flex;
+    flex-direction: column;
+}
+
+#startLinks{
+    align-items: start;
+}
+
+#endLinks{
+    align-items: end;
+    margin-left: 60px;
+}
+
+.footerNavigationLinks > a{
+    width: fit-content;
+    text-decoration: none;
+    color: var(--font-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+    transition: color 0.4s ease-in-out;
+}
+.footerNavigationLinks > a:hover{
+    color: white;
+}
+
+/* social media links */
+#socialMediaLinks{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#socialMediaLinks > a {
+    margin-top: 10px;
+    margin-inline: 20px;
+}
+
+#socialMediaLinks > a > img{
+    width: 40px;
+    height: 40px;
+    transition: all 0.4s ease-in-out;
+}
+#socialMediaLinks > a:hover > img{
+    filter: brightness(0) invert(1);
+    transform: scale(1.2);
+}
+
+
+body{
+    font-family: poppins;
+    background-color: rgb(232, 232, 232);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* About section */
+.about{
+    background-color: rgb(214, 255, 163);
+    background:linear-gradient(to right, rgba(255, 231, 112, 0.669),rgba(255, 255, 255, 0) );
+    margin-top: 40px;
+    padding: 20px;
+    padding-bottom: 60px;
+    width: 50%;
+    padding-right: 300px;
+    
+}
+/* About section image */
+.about-image{
+    width: 500px;
+    height:500px;
+    position: absolute;
+    margin-left: 950px;
+    background-image: url(../assets/aboutImage.png);
+    background-size: cover;
+    margin-top: 0;
+    
+    
+}
+.new{
+    width: 250px;
+    height: 100px;
+   
+}
+/* About section main topic */
+.topic1{
+    font-size: 42px;
+    margin-bottom: 0;
+    color: rgb(38, 38, 38);
+}
+/* About section sub topic */
+.sub-topic{
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 30px;
+    color: rgb(55, 55, 55);
+}
+/* About section content */
+.content{
+    margin-top: 0;
+    font-size: 22px;
+    margin-bottom: 0;
+}
+/* mission section  */
+.mission{
+    background-color: rgb(214, 255, 163);
+    background:linear-gradient(to right, rgba(255, 255, 255, 0),rgba(255, 231, 112, 0.669) );
+    margin-top: 30px;
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    text-align: left;
+    margin-right: 0;
+    padding-left: 260px;
+    margin-left: 30%;
+}
+/* mission section image */
+.mission-image{
+    width: 500px;
+    height:500px;
+    position: absolute;
+    margin-left: 20px;
+    background-image: url(../assets/missionImage.png);
+    background-size: cover;
+    margin-top: 0;
+}
+/* background images */
+.img1{
+    position: absolute;
+    z-index: -1;
+    margin-left: -300px;
+    opacity: 30%;
+}
+
+.img2{
+    position: absolute;
+    z-index: -1;
+    margin-top: 350px;
+    margin-left: 1200px;
+    opacity: 30%;
+}
+.img3{
+    position: absolute;
+    z-index: -1;
+    margin-top: 1200px;
+    margin-left: 1200px;
+    opacity: 30%;
+}
+.img4{
+    position: absolute;
+    z-index: -1;
+    margin-top: 1100px;
+    margin-left: -500px;
+    opacity: 30%;
+    
+}
+/* Why choose us section */
+
+/* Why choose us section first row */
+.choose1{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+/* Why choose us section second row */
+.choose2{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+/* Why choose us section topic */
+.choose-topic{
+    text-align: center;
+    font-size: 44px;
+}
+
+/* Why choose us section topic card */
+.card{
+    margin: 10px;
+    padding: 35px;
+    width: 265px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 14px;
+    margin-left: 200px;
+    margin-right: 200px;
+    
+}
+.card h2{
+    font-size: 28px;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: rgb(255, 212, 95);
+}
+.card h4{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
