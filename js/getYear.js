@@ -1,2 +1,4 @@
 let year = new Date().getFullYear();
-document.querySelector(".year").innerHTML = year;
+document.querySelectorAll(".year").forEach(function(element) {
+    element.innerHTML = year;
+});
