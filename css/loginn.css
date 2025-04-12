@@ -76,7 +76,6 @@ header{
 
 #topLogo{
     margin-left: 20px;
-    margin-top: -70px;
 }
 /* navigation button */
 #navbarBtn{
@@ -86,7 +85,6 @@ header{
     height: fit-content;
     margin-left: 25px;
     cursor: pointer;
-    margin-top: -70px;
 }
 
 #navbarBtn > img{
@@ -118,7 +116,6 @@ footer{
 /* logo inside the footer */
 #bottomLogo{
     margin-left: -20px;
-    margin-top: -70px;
 }
 
 /* navigation links */
@@ -151,7 +148,6 @@ footer{
 }
 .footerNavigationLinks > a:hover{
     color: white;
-
 }
 
 /* social media links */
@@ -160,11 +156,9 @@ footer{
     justify-content: space-evenly;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: -30px;
-    margin-bottom: 20px;
 }
 #socialMediaLinks > a {
-    margin-top: -10px;
+    margin-top: 10px;
     margin-inline: 20px;
 }
 
@@ -177,12 +171,102 @@ footer{
     filter: brightness(0) invert(1);
     transform: scale(1.2);
 }
-.footernavi{
-    margin-bottom: 400px;
-    margin-left: -10px;
-    padding: 790PX;
-    padding-left: 10PX;
-    width: 100%;
-    margin-top: -600px;
+/* web page left side main image*/
+img{
+    width: 50%;
+    float: left;
+    margin-top:  80px;
+}
+
+/* yellow background page right side*/
+form{
+  background-color: rgb(245, 209, 34);
+  height: 680px;
+  padding-top: 20px;  
+  float: right;
+  margin-right: 00px;
+  width: 500px;
+  padding-right: 150px;
+  padding-left: 100px;
+}
+
+/*white background from page*/
+.sigin{
+    align-items: center;
+    width: 350px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: white;
+    padding-left: 20px;
+    border-radius: 25px;
+    margin: 100px;
+
+}
+
+h1{
+    text-align: center;
+}
+
+input{
+    width: 320px;
+    height: 25px;
+    border-radius: 8px;
+    font-weight: 300;
+    border: 2px solid black;
    
+}
+
+/*login button */
+button{
+    width: 320px;
+    height: 30px;
+    border-radius: 8px;
+    margin-top: 40px;
+    background-color: rgb(225, 194, 17);
+
+}
+
+/*username, password,Remember mainly design this part*/
+label{
+    font-size: 18px;
+   
+}
+
+/*login button inside "login" word create this part*/
+.sumbit{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*checkbox square shape create a this part*/
+.checkbox{
+    width: 25px;
+    height: 15px;
+    padding-left: 25px;
+    border: 2px solid black;
+
+}
+
+/*facebook,googl and twitter logo design this part*/
+.icon{
+    width: 25px;
+    height: 25px;
+    align-items: normal;
+    padding-left: 30px;
+    margin-left:40px;
+    margin-top: 10px;
+}
+
+
+/*end of the page "create a new account" creat a this part*/
+.end{
+    margin-top: 50px;
+    text-align: center;
+}
+
+/*next page link"sign page" create a this part*/
+.orlogin{
+    text-align: center;
+    font-size: 19px;
+    margin-top: 20px;
 }
