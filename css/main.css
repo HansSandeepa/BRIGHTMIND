@@ -1,4 +1,4 @@
-:root{
+:root {
     --main-color: #ffbe00;
     --font-color: #000;
     --login-btn-color: #02ce1a;
@@ -6,12 +6,12 @@
     --header-height: 120px;
 }
 
-body{
-    margin:0;
+body {
+    margin: 0;
     font-family: sans-serif;
 }
 
-header{
+header {
     background-color: rgba(255, 190, 0, 0.53);
     display: flex;
     position: fixed;
@@ -22,18 +22,19 @@ header{
     align-items: center;
 }
 
-#headerWrapper{
+#headerWrapper {
     width: var(--header-width);
     height: var(--header-height);
 }
+
 /* login and sign in buttons section */
-#loginBtnSection{
+#loginBtnSection {
     display: block;
     margin-right: 30px;
     margin-left: -50px;
 }
 
-#loginBtnSection > a{
+#loginBtnSection>a {
     text-decoration: none;
     cursor: pointer;
     font-family: sans-serif;
@@ -49,37 +50,38 @@ header{
     transition: all 0.4s ease-in-out;
 }
 
-#loginBtnSection > a:hover{
+#loginBtnSection>a:hover {
     background-color: var(--login-btn-color);
     color: white;
-    border-color:  var(--login-btn-color);
+    border-color: var(--login-btn-color);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),
-                0px 0px 5px rgba(0, 0, 0, 0.5);
+        0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* logo section */
-.logo{
+.logo {
     display: inline-grid;
 }
 
-.logoImg{
+.logoImg {
     height: 60px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.logoText{
+.logoText {
     font-family: Kaushan Script;
     margin: 0;
     font-size: 25px;
 }
 
-#topLogo{
+#topLogo {
     margin-left: 20px;
     margin-top: -70px;
 }
+
 /* navigation button */
-#navbarBtn{
+#navbarBtn {
     background-color: initial;
     border: none;
     width: fit-content;
@@ -89,26 +91,26 @@ header{
     margin-top: -70px;
 }
 
-#navbarBtn > img{
+#navbarBtn>img {
     width: 40px;
     transition: background-color 0.4s ease-in-out;
     border-radius: 5px;
 }
 
-#navbarBtn > img:hover{
+#navbarBtn>img:hover {
     background-color: white;
 
 }
 
 /* footer design */
-footer{
+footer {
     display: flex;
     justify-content: space-between;
     background-color: var(--main-color);
     padding-top: 20px;
 }
 
-.footerTitles{
+.footerTitles {
     width: fit-content;
     margin-inline: auto;
     margin-bottom: 10px;
@@ -116,32 +118,32 @@ footer{
 }
 
 /* logo inside the footer */
-#bottomLogo{
+#bottomLogo {
     margin-left: -20px;
     margin-top: -70px;
 }
 
 /* navigation links */
-#footerNavigation{
+#footerNavigation {
     width: 300px;
     text-align: center;
 }
 
-.footerNavigationLinks{
+.footerNavigationLinks {
     display: inline-flex;
     flex-direction: column;
 }
 
-#startLinks{
+#startLinks {
     align-items: start;
 }
 
-#endLinks{
+#endLinks {
     align-items: end;
     margin-left: 60px;
 }
 
-.footerNavigationLinks > a{
+.footerNavigationLinks>a {
     width: fit-content;
     text-decoration: none;
     color: var(--font-color);
@@ -149,13 +151,13 @@ footer{
     font-weight: 600;
     transition: color 0.4s ease-in-out;
 }
-.footerNavigationLinks > a:hover{
-    color: white;
 
+.footerNavigationLinks>a:hover {
+    color: white;
 }
 
 /* social media links */
-#socialMediaLinks{
+#socialMediaLinks {
     display: flex;
     justify-content: space-evenly;
     margin-left: 20px;
@@ -163,26 +165,19 @@ footer{
     margin-top: -30px;
     margin-bottom: 20px;
 }
-#socialMediaLinks > a {
+
+#socialMediaLinks>a {
     margin-top: -10px;
     margin-inline: 20px;
 }
 
-#socialMediaLinks > a > img{
+#socialMediaLinks>a>img {
     width: 40px;
     height: 40px;
     transition: all 0.4s ease-in-out;
 }
-#socialMediaLinks > a:hover > img{
+
+#socialMediaLinks>a:hover>img {
     filter: brightness(0) invert(1);
     transform: scale(1.2);
-}
-.footernavi{
-    margin-bottom: 400px;
-    margin-left: -10px;
-    padding: 790PX;
-    padding-left: 10PX;
-    width: 100%;
-    margin-top: -600px;
-   
 }

@@ -1,197 +1,36 @@
-:root{
-    --main-color: #ffbe00;
-    --font-color: #000;
-    --login-btn-color: #02ce1a;
-    --header-width: 100%;
-    --header-height: 120px;
-}
-
-body{
-    margin:0;
-    font-family: sans-serif;
-}
-
-header{
-    background-color: rgba(255, 190, 0, 0.53);
-    display: flex;
-    position: fixed;
-    z-index: 1;
-    justify-content: space-between;
-    width: var(--header-width);
-    height: var(--header-height);
-    align-items: center;
-}
-
-#headerWrapper{
-    width: var(--header-width);
-    height: var(--header-height);
-}
-/* login and sign in buttons section */
-#loginBtnSection{
-    display: block;
-    margin-right: 30px;
-    margin-left: -50px;
-}
-
-#loginBtnSection > a{
-    text-decoration: none;
-    cursor: pointer;
-    font-family: sans-serif;
-    font-weight: 600;
-    background-color: inherit;
-    color: var(--font-color);
-    border: 3px solid var(--font-color);
-    border-radius: 10px;
-    font-size: large;
-    padding-block: 5px;
-    padding-inline: 15px;
-    margin-right: 10px;
-    transition: all 0.4s ease-in-out;
-}
-
-#loginBtnSection > a:hover{
-    background-color: var(--login-btn-color);
-    color: white;
-    border-color:  var(--login-btn-color);
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),
-                0px 0px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* logo section */
-.logo{
-    display: inline-grid;
-}
-
-.logoImg{
-    height: 60px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.logoText{
-    font-family: Kaushan Script;
-    margin: 0;
-    font-size: 25px;
-}
-
-#topLogo{
-    margin-left: 20px;
-}
-/* navigation button */
-#navbarBtn{
-    background-color: initial;
-    border: none;
-    width: fit-content;
-    height: fit-content;
-    margin-left: 25px;
-    cursor: pointer;
-}
-
-#navbarBtn > img{
-    width: 40px;
-    transition: background-color 0.4s ease-in-out;
-    border-radius: 5px;
-}
-
-#navbarBtn > img:hover{
-    background-color: white;
-
-}
-
-/* footer design */
-footer{
+/* ligin image container */
+section {
     display: flex;
     justify-content: space-between;
-    background-color: var(--main-color);
-    padding-top: 20px;
+    height: 100%;
 }
 
-.footerTitles{
-    width: fit-content;
-    margin-inline: auto;
-    margin-bottom: 10px;
-    margin-top: 1px;
-}
-
-/* logo inside the footer */
-#bottomLogo{
-    margin-left: -20px;
-}
-
-/* navigation links */
-#footerNavigation{
-    width: 300px;
-    text-align: center;
-}
-
-.footerNavigationLinks{
-    display: inline-flex;
-    flex-direction: column;
-}
-
-#startLinks{
-    align-items: start;
-}
-
-#endLinks{
-    align-items: end;
-    margin-left: 60px;
-}
-
-.footerNavigationLinks > a{
-    width: fit-content;
-    text-decoration: none;
-    color: var(--font-color);
-    margin-bottom: 8px;
-    font-weight: 600;
-    transition: color 0.4s ease-in-out;
-}
-.footerNavigationLinks > a:hover{
-    color: white;
-}
-
-/* social media links */
-#socialMediaLinks{
-    display: flex;
-    justify-content: space-evenly;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-#socialMediaLinks > a {
-    margin-top: 10px;
-    margin-inline: 20px;
-}
-
-#socialMediaLinks > a > img{
-    width: 40px;
-    height: 40px;
-    transition: all 0.4s ease-in-out;
-}
-#socialMediaLinks > a:hover > img{
-    filter: brightness(0) invert(1);
-    transform: scale(1.2);
-}
 /* web page left side main image*/
-img{
-    width: 50%;
-    float: left;
-    margin-top:  80px;
+#imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 50vw;
+}
+
+img {
+    width: 80%;
 }
 
 /* yellow background page right side*/
-form{
-  background-color: rgb(245, 209, 34);
-  height: 680px;
-  padding-top: 20px;  
-  float: right;
-  margin-right: 00px;
-  width: 500px;
-  padding-right: 150px;
-  padding-left: 100px;
+form {
+    background-color: rgb(245, 209, 34);
+    height: 680px;
+    padding-top: 20px;
+    float: right;
+    width: 500px;
+    padding-right: 150px;
+    padding-left: 100px;
 }
 
 /*white background from page*/
-.sigin{
+.sigin {
     align-items: center;
     width: 350px;
     height: 500px;
@@ -203,21 +42,21 @@ form{
 
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-input{
+input {
     width: 320px;
     height: 25px;
     border-radius: 8px;
     font-weight: 300;
     border: 2px solid black;
-   
+
 }
 
 /*login button */
-button{
+button {
     width: 320px;
     height: 30px;
     border-radius: 8px;
@@ -227,19 +66,19 @@ button{
 }
 
 /*username, password,Remember mainly design this part*/
-label{
+label {
     font-size: 18px;
-   
+
 }
 
 /*login button inside "login" word create this part*/
-.sumbit{
+.sumbit {
     font-size: 15px;
     font-weight: bold;
 }
 
 /*checkbox square shape create a this part*/
-.checkbox{
+.checkbox {
     width: 25px;
     height: 15px;
     padding-left: 25px;
@@ -248,24 +87,24 @@ label{
 }
 
 /*facebook,googl and twitter logo design this part*/
-.icon{
+.icon {
     width: 25px;
     height: 25px;
     align-items: normal;
     padding-left: 30px;
-    margin-left:40px;
+    margin-left: 40px;
     margin-top: 10px;
 }
 
 
 /*end of the page "create a new account" creat a this part*/
-.end{
+.end {
     margin-top: 50px;
     text-align: center;
 }
 
 /*next page link"sign page" create a this part*/
-.orlogin{
+.orlogin {
     text-align: center;
     font-size: 19px;
     margin-top: 20px;
