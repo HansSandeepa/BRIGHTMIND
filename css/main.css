@@ -112,13 +112,14 @@ header {
     display: block;
 }
 
+
 #dropdown:hover img{
     filter: brightness(0) invert(1);
     transform: scale(1.2);
 }
 
-#dropdown-content > #LogOut{
-    border-top:1px solid rgb(181, 181, 181) ;
+#dropdown-content>#LogOut {
+    border-top: 1px solid rgb(181, 181, 181);
 }
 
 /* logo section */
