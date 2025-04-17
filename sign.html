@@ -8,11 +8,98 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/signmain.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/sign.css">
 </head>
 
 <body>
+    <!-- side navgation bar -->
+    <div class="sidebar">
+
+        <!-- side bar logo and close button -->
+        <div class="sidebarHeader">
+
+            <div class="logo" id="sideLogo">
+                <img src="./assets/lightbulb 1.png" alt="Logo" id="sideLogoImg" class="logoImg">
+                <p class="logoText" id="sidebarLogoText">Bright Mind</p>
+            </div>
+
+            <button id="closeBtn" class="closeBtn">
+                <img src="./assets/close.svg" alt="closebtn">
+            </button>
+
+        </div>
+
+        <!-- sidebar content -->
+        <div class="sidebarContent">
+            <div class="topContent">
+                <ul class="sideBarLists">
+
+                    <li class="sideBarList" id="selectedNavItem">
+                        <a href="#" class="nav-link">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="sideBarList">
+                        <a href="#" class="nav-link">
+                            Courses
+                        </a>
+                    </li>
+
+                    <li class="sideBarList">
+                        <a href="#" class="nav-link">
+                            Instructors
+                        </a>
+                    </li>
+
+                    <li class="sideBarList">
+                        <a href="./about.html" class="nav-link">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li class="sideBarList">
+                        <a href="#" class="nav-link">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="bottomContent">
+                <ul class="sideBarLists">
+
+                    <li class="sideBarList">
+                        <a href="#" class="nav-link">
+                            Log In
+                        </a>
+                    </li>
+
+                    <li class="sideBarList">
+                        <a href="#" class="nav-link">
+                            Sign In
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            &copy; <span class="year"></span> Bright Mind.
+        </div>
+
+    </div>
+
+    <!-- overlay that emerges with the navbar -->
+    <section id="overlay">
+        <!-- do not delete this -->
+    </section>
+
+
     <!-- HEADER SECTION -->
     <header>
         <button id="navbarBtn">
@@ -32,41 +119,46 @@
     <div id="headerWrapper">
         <!-- do not delete this element -->
     </div>
+
     <!-- CONTECT SECTION -->
-    <section style="height:70vh">
-        <img src="./assets/lahiru/sign.jpg">
+    <section>
+        <div id="signImg">
+            <img src="./assets/lahiru/sign.jpg">
+        </div>
 
-
-        <form action="" class="form">
-
-            <div class="sigin">
-                <h1>SIGN PAGE</h1> <br />
-                <label>User Name:</label><br />
-                <input type="text" name="username" required><br /><br />
-
-                <label>Email:</label><br />
-                <input type="text" name="username" required><br /><br />
-
-                <label>Password:</label><br />
-                <input type="text" name="password" required><br /><br />
-
-                <label>Conform password:</label><br />
-                <input type="text" name="password" required><br /><br /><br />
-
-                <label class="checkbox"><input class="checkbox" type="checkbox" name="password" required>I agree to the
-                    <b>TEAM AND CONDITION </b></label>
-
-                <br /><br />
-                <button><label class="sumbit">SUMBIT</label></button>
-
-            </div>
-        </form>
-
+        <div id="signForm">
+            <form action="" class="form">
+            
+                <div class="sigin">
+                    <h1>SIGN PAGE</h1> <br />
+                    <label>User Name:</label><br />
+                    <input type="text" name="username" required><br /><br />
+            
+                    <label>Email:</label><br />
+                    <input type="text" name="username" required><br /><br />
+            
+                    <label>Password:</label><br />
+                    <input type="text" name="password" required><br /><br />
+            
+                    <label>Conform password:</label><br />
+                    <input type="text" name="password" required><br /><br /><br />
+            
+                    <label class="checkbox"><input class="checkbox" type="checkbox" name="password" required>I agree to the
+                        <b>TEAM AND CONDITION </b></label>
+            
+                    <br /><br />
+                    <button><label class="sumbit">SUMBIT</label></button>
+            
+                </div>
+            </form>
+            
+        </div>
     </section>
 
     <!-- FOOTER SECTION  -->
-    <div class="footerupper">
-        <footer>
+    <footer>
+
+        <div id="footerWrapper">
             <div id="footerNavigation">
                 <h2 class="footerTitles">Navigation</h2>
                 <div class="footerNavigationLinks" id="startLinks">
@@ -76,7 +168,8 @@
                 </div>
                 <div class="footerNavigationLinks" id="endLinks">
                     <a href="">Student Profile</a>
-                    <a href="">About Us</a>
+                    <a href="./about.html">About Us</a>
+                    <a href="">Contact Us</a>
                 </div>
             </div>
 
@@ -94,7 +187,18 @@
                     <a href="https://www.instagram.com/"><img src="./assets/instagram.svg" alt="Instagram"></a>
                 </div>
             </div>
-        </footer>
-        <div </body>
+        </div>
+
+        <div class="copyright">
+            &copy; <span class="year"></span> Bright Mind.
+        </div>
+
+    </footer>
+
+    <!-- import javascript files here -->
+     <script src="./js/navbar.js"></script>
+    <script src="./js/getYear.js"></script>
+
+    </body>
 
 </html>

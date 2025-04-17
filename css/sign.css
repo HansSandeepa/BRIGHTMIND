@@ -1,8 +1,19 @@
-img{
+#signImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signImg > img{
     width: 50%;
     float: left;
     margin-top: 60px;
-    height: 600px;
+    height: auto;
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
 }
 
 form{
@@ -14,7 +25,7 @@ form{
   margin-right: 00px;
   width: 500px;
   padding-right: 150px;
-  padding-left: 100px;
+  padding-left: 155px;
 }
 
 .sigin{
