@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Mind</title>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/paymentPageCSS.css">
+    
+</head>
+
+
+<body>
+    <!-- side navgation bar -->
+    <div class="sidebar">
+
+        <!-- side bar logo and close button -->
+        <div class="sidebarHeader">
+
+            <div class="logo" id="sideLogo">
+                <img src="./assets/lightbulb 1.png" alt="Logo" id="sideLogoImg" class="logoImg">
+                <p class="logoText" id="sidebarLogoText">Bright Mind</p>
+            </div>
+
+            <button id="closeBtn" class="closeBtn">
+                <img src="./assets/close.svg" alt="closebtn">
+            </button>
+
+        </div>
+
+        <!-- sidebar content -->
+        <div class="sidebarContent">
+            <div class="topContent">
+                <ul class="sideBarLists">
+
+                    <li class="sideBarList" id="selectedNavItem">
+                        <a href="#" class="nav-link">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="sideBarList">
+                        <a href="#" class="nav-link">
+                            Courses
+                        </a>
+                    </li>
+
+                    <li class="sideBarList">
+                        <a href="#" class="nav-link">
+                            Instructors
+                        </a>
+                    </li>
+
+                    <li class="sideBarList">
+                        <a href="./about.html" class="nav-link">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li class="sideBarList">
+                        <a href="#" class="nav-link">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="bottomContent">
+                <ul class="sideBarLists">
+
+                    <li class="sideBarList">
+                        <a href="#" class="nav-link">
+                            Log In
+                        </a>
+                    </li>
+
+                    <li class="sideBarList">
+                        <a href="#" class="nav-link">
+                            Sign In
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            &copy; <span class="year"></span> Bright Mind.
+        </div>
+
+    </div>
+
+    <!-- overlay that emerges with the navbar -->
+    <section id="overlay">
+        <!-- do not delete this -->
+    </section>
+
+
+    <!-- HEADER SECTION -->
+    <header>
+        <button id="navbarBtn">
+            <img src="./assets/navbar button.png" alt="navbtn">
+        </button>
+
+        <div class="logo" id="topLogo">
+            <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
+            <p class="logoText">Bright Mind</p>
+        </div>
+
+        <div id="loginBtnSection">
+            <a href="#">Log In</a>
+            <a href="#">Sign In</a>
+        </div>
+    </header>
+    <div id="headerWrapper">
+        <!-- do not delete this element -->
+    </div>
+
+   
+    
+        <div class="wrapper">
+            
+            <form action="#" method="post" enctype="application/x-www-form-urlencoded" onsubmit=" return validateForm()" >
+    
+                <h1>
+                    Payment Method
+                </h1>
+    
+                
+                <div class="payment-checkbox">
+                    <div class="pmnt">
+                        <img src="assets/PaymentPageAssets/icons8-visa-card-100.png">
+                    </div>
+                    <div class="pmnt">
+                    <label class="payment-text">Visa Card</label>
+                    </div>
+                    <div class="pmnt">
+                        <input type="radio" value="credit-card" name="pm" class="radio" id="cc" required>
+                    </div>
+                </div>
+                    
+                
+    
+    
+                <div class="payment-checkbox">
+                    <div class="pmnt" >
+                        <img src="assets/PaymentPageAssets/master.png">
+                    </div>
+                    <div class="pmnt">
+    
+                        <label class="payment-text">Master card</label>
+                    </div>
+                    <div class="pmnt">
+    
+                        <input type="radio" value="payoneer" name="pm" class="radio" id="payoneer" required>
+                    </div>
+                    
+                </div>
+    
+    
+                <div class="payment-checkbox">
+                    <div class="pmnt" >
+                        <img src="assets/PaymentPageAssets/AMEX.png">
+                    </div>
+                    <div class="pmnt">
+                        <label class="payment-text">AMEX</label>
+                    </div>
+                    <div class="pmnt">
+                        <input type="radio" value="paypal" name="pm" class="radio" id="payp" required>
+                    </div>
+                   
+                    
+                    
+                </div>
+    
+                <hr>
+                
+                <div class="lbl">
+                    <label class="lbl">Cardholder name</label><br>
+                    <input type="text" placeholder="Enter Name Here" class="inpt"  id="idname" maxlength="30">
+                    <span id="error-name"> </span>
+                </div>
+                
+                <div class="lbl">
+                <label class="lbl">Card number</label><br>
+                <input type="text" placeholder="0000 0000 0000 0000" class="inpt" minlength="16" maxlength="16" id="card-number">
+                <span id="error-card"> </span>
+                </div>
+    
+                <div class="cvv">
+                    <div class="cvvin">
+                        <label>Expiration date</label> <br>
+                        <input type="text" placeholder="--/--" class="excvv" maxlength="5" id="exdate">
+                        <span id="ex-error" ></span>
+                    </div>
+                    <div class="cvvin" id="cvvin">
+                        <label>CVV</label><br>
+                        <input type="password" placeholder="***" class="excvv" maxlength="3" id="cvvnum" minlength="3">
+                        <span id="cvv-error"></span>
+                    </div>
+                </div>
+                
+               
+    
+                
+                
+    
+                <br><div class="lbl">
+                    <input type="checkbox" class="terms" required>
+                    <label class="lbl">Save card information for future payments</label>
+                </div>
+    
+                <hr>
+                <div class="btns">
+                    <button class="cancel">Cancel</button> <!--Need to go back to home page-->
+                    <input type="reset" class="reset">
+                    <input type="submit" class="pay" style="text-decoration: none;"  value="Pay Now" >
+                    
+                </div>
+                
+               
+    
+            </form>
+            
+    
+    
+    
+        </div>
+      
+   
+        
+
+
+
+    <!-- FOOTER SECTION  -->
+    <footer>
+
+        <div id="footerWrapper">
+            <div id="footerNavigation">
+                <h2 class="footerTitles">Navigation</h2>
+                <div class="footerNavigationLinks" id="startLinks">
+                    <a href="">Home</a>
+                    <a href="">Courses</a>
+                    <a href="">Instructors</a>
+                </div>
+                <div class="footerNavigationLinks" id="endLinks">
+                    <a href="">Student Profile</a>
+                    <a href="./about.html">About Us</a>
+                    <a href="">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="logo" id="bottomLogo">
+                <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
+                <p class="logoText">Bright Mind</p>
+            </div>
+
+            <div id="socialMediaLinksSegment">
+                <h2 class="footerTitles">Follow Us</h2>
+                <div id="socialMediaLinks">
+                    <a href="https://www.facebook.com/"><img src="./assets/facebook.svg" alt="Facebook"></a>
+                    <a href="https://www.linkedin.com/"><img src="./assets/linkedin.svg" alt="LinkedIn"></a>
+                    <a href="https://www.github.com/"><img src="./assets/github.svg" alt="Github"></a>
+                    <a href="https://www.instagram.com/"><img src="./assets/instagram.svg" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; <span class="year"></span> Bright Mind.
+        </div>
+
+    </footer>
+
+    <!-- import javascript files here -->
+     <script src="./js/navbar.js"></script>
+     <script src="./js/getYear.js"></script>
+     <script src="js/PaymentPage.js"></script>
+
+</body>
+
+</html>
