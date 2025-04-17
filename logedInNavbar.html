@@ -73,13 +73,13 @@
 
                     <li class="sideBarList">
                         <a href="#" class="nav-link">
-                            Log In
+                            Student Profile
                         </a>
                     </li>
 
                     <li class="sideBarList">
                         <a href="#" class="nav-link">
-                            Sign In
+                            Log Out
                         </a>
                     </li>
 
@@ -112,10 +112,20 @@
             <p class="logoText">Bright Mind</p>
         </div>
 
-        <div id="loginBtnSection">
-            <a href="#">Log In</a>
-            <a href="#">Sign In</a>
+        <!-- student profile section -->
+        <div id="dropdown">
+            <button id="profile" title="Student Profile">
+                <img src="./assets/profile.svg" alt="profile icon" id="profileIcon">
+            </button>
+
+            <!-- profile dropdown -->
+            <div id="dropdown-content">
+                <a href="#">Student Profile</a>
+                <a href="#" id="LogOut">Log Out</a>
+            </div>
         </div>
+
+
     </header>
     <div id="headerWrapper">
         <!-- do not delete this element -->
@@ -170,8 +180,8 @@
     </footer>
 
     <!-- import javascript files here -->
-     <script src="./js/navbar.js"></script>
-     <script src="./js/getYear.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/getYear.js"></script>
 
 </body>
 
