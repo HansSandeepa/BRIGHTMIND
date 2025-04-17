@@ -11,10 +11,10 @@ section {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    width: 50vw;
+    width: 40%;
 }
 
-img {
+#imgContainer>img {
     width: 80%;
 }
 
@@ -26,7 +26,7 @@ form {
     float: right;
     width: 500px;
     padding-right: 150px;
-    padding-left: 100px;
+    padding-left: 155px;
 }
 
 /*white background from page*/
