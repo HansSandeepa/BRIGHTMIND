@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bright Mind</title>
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
-</head>
+    <link rel="stylesheet" href="./css/loginn.css">
 
+</head>
 
 <body>
     <!-- side navgation bar -->
@@ -121,13 +121,51 @@
         <!-- do not delete this element -->
     </div>
 
+    
     <!-- CONTECT SECTION -->
-    <section style="height:70vh">
-        change this to your content
-        <!-- content of the web page goes here -->
+    <section>
+        <div id="imgContainer">
+            <!--left side image-->
+            <img src="./assets/lahiru/login.jpg" alt="login">
+        </div>
+
+        <!--form part-->
+        <div id="formContainer">
+            <form action="" class="form">
+
+                <div class="sigin">
+                    <h1>LOGIN PAGE</h1> <br />
+                    <label>User Name:</label><br />
+                    <input type="text" name="username" id="username" required><br /><br />
+
+                    <label>Password</label><br />
+                    <input type="text" name="password" id="password" required><br /><br />
+
+                    <label><input class="checkbox" type="checkbox" name="password" required>Remeber me</label>
+
+                    <button onclick="func()"><label class="sumbit">LOGIN</label></button>
+                    <br />
+
+
+                    <div class="orlogin">or login with</div>
+
+                    <!--icon part-->
+                    <a href=""><img class="icon" src="./assets/lahiru/facebook-new.png"></a>
+                    <a href=""><img class="icon" src="./assets/lahiru/google new.jpg"></a>
+                    <a href=""><img class="icon" src="./assets/lahiru/twitter-new.png"></a>
+                    <br />
+
+
+
+                    <div class="end">
+                        Creat a New Account<br />
+                        <a href="sign.html">SIGN UP </a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
     </section>
-
-
 
     <!-- FOOTER SECTION  -->
     <footer>
@@ -171,7 +209,7 @@
 
     <!-- import javascript files here -->
      <script src="./js/navbar.js"></script>
-     <script src="./js/getYear.js"></script>
+    <script src="./js/getYear.js"></script>
 
 </body>
 
