@@ -1,0 +1,139 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: lightgrey;
+    color: #3d3d3d;
+    line-height: 1.6;
+}
+
+.instructor-profiles-container{
+    max-width: 1200px;
+    padding: 20px;
+    margin:40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    gap: 30px;
+}
+
+.instructor-profile{
+    background-color: #cdc3c3;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgb(14, 14, 14);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.instructor-profile:hover{
+    transform:translateY(-5px);
+    box-shadow: 0 8px 16px  rgb(47, 45, 45);
+}
+
+.header{
+    background-color: hsl(51, 76%, 48%);
+    color: #570d0d;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid rgb(238, 210, 119);
+}
+
+.header h2{
+    margin-bottom: 0;
+    font-size: 1.8em;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.image{
+    width: 100px;
+    height: 100px;
+    border: 4px solid rgb(158, 157, 157);
+    border-radius: 50%;
+    flex-shrink:0;
+    box-shadow: 0 2px 6px rgb(33, 29, 29);
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 50%;
+}
+
+.image:hover img{
+    transform: scale(1.05);
+}
+
+.info{
+    flex-grow: 1;
+}
+
+.info h3{
+    color: rgb(52, 48, 48);
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.info .position{
+    font-style: italic;
+    color: rgb(113, 109, 109);
+    margin-bottom: 10px;
+}
+
+.info .subject{
+    color: rgb(95, 87, 87);
+    margin-bottom: 8px;
+}
+
+.info .contact{
+    color: rgb(19, 37, 229);
+    margin-bottom: 12px;
+    cursor: pointer;
+
+}
+
+.info .contact a{
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.info .contact a:hover{
+    color: rgb(113, 18, 11);
+}
+
+.bio{
+    color: rgb(88, 83, 83);
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.other{
+    color: rgb(107, 101, 101);
+    font-size: 0.8em;
+    border-top: 1px solid rgb(225, 217, 217);
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+.other p{
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px){
+    .details{
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .image{
+        margin-bottom: 15px;
+    }
+}
