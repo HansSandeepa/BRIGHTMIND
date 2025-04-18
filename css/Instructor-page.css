@@ -1,7 +1,7 @@
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: lightgrey;
+    background-color: white;
     color: #3d3d3d;
     line-height: 1.6;
 }
@@ -34,11 +34,12 @@ body{
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid rgb(238, 210, 119);
+
 }
 
 .header h2{
     margin-bottom: 0;
-    font-size: 1.8em;
+    font-size: 2.3em;
 }
 
 .details{
@@ -75,20 +76,24 @@ body{
 
 .info h3{
     color: rgb(52, 48, 48);
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-top: 0;
     margin-bottom: 8px;
+    font-weight: 500;
 }
 
 .info .position{
     font-style: italic;
-    color: rgb(113, 109, 109);
+    color: rgb(56, 53, 53);
     margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .info .subject{
     color: rgb(95, 87, 87);
     margin-bottom: 8px;
+    font-size: 20px;
 }
 
 .info .contact{
@@ -105,21 +110,23 @@ body{
 }
 
 .info .contact a:hover{
-    color: rgb(113, 18, 11);
+    color: rgb(189, 20, 8);
 }
 
 .bio{
-    color: rgb(88, 83, 83);
+    color: rgb(63, 56, 56);
     margin-bottom: 15px;
     line-height: 1.7;
+    font-weight: bold;
 }
 
 .other{
     color: rgb(107, 101, 101);
-    font-size: 0.8em;
+    font-size: 1.0em;
     border-top: 1px solid rgb(225, 217, 217);
     margin-top: 15px;
     padding-top: 15px;
+    font-weight: bold;
 }
 
 .other p{
