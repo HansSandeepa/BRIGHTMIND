@@ -113,7 +113,7 @@ header {
 }
 
 
-#dropdown:hover img{
+#dropdown:hover img {
     filter: brightness(0) invert(1);
     transform: scale(1.2);
 }
@@ -128,7 +128,8 @@ header {
 }
 
 .logoImg {
-    height: 60px;
+    height: 60px !important;
+    width: auto !important;
     margin-left: auto;
     margin-right: auto;
 }
@@ -154,7 +155,8 @@ header {
 }
 
 #navbarBtn>img {
-    width: 40px;
+    width: 40px !important;
+    height: auto !important;
     transition: background-color 0.4s ease-in-out;
     border-radius: 5px;
 }
