@@ -1,0 +1,389 @@
+body {
+   background-color: #FFFAE7;
+}
+
+                                             /* welcome part */
+
+#hbg {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 1520px;
+   height: 650px;
+   background-size: cover;
+   background-position: center;
+}
+
+#box {
+   display: flex;
+   width: 1300px;
+   height: 500px;
+   background: rgba(255, 255, 255, 0.29);
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 76px;
+}
+
+#welcome {
+   margin-left: 50px;
+   margin-top: 80px;
+   color: red;
+   font-family: sans-serif;
+   font-size: 90px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   transform: translateY(100%);
+   animation: slideFadeIn 2s forwards;
+}
+
+ /* welcome transition */
+@keyframes slideFadeIn {
+   0% {
+      opacity: 0;
+      transform: translateY(100%);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+
+#para2 {
+   margin-top: 160px;
+   margin-left: 60px;
+   columns: black;
+   font-family: sans-serif;
+   font-size: 38px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   animation: emerge 2s ease forwards;
+   opacity: 0;
+}
+
+/* learn with brightmind transition */
+@keyframes emerge {
+   0% {
+      opacity: 0;
+      transform: scale(0.8);
+   }
+
+   100% {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+#journey {
+   cursor: pointer;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 425px;
+   margin-right: 50px;
+   border-radius: 20px;
+   width: 200px;
+   height: 50px;
+   flex-shrink: 0;
+   background: rgb(255, 255, 255);
+   transition: transform 0.8s ease; /* start journey button transition */
+}
+
+#journey:hover {
+   transform: scale(1.2);
+}
+
+a {
+   text-decoration: none;
+}
+
+#para3 {
+   margin-left: 5px;
+   margin-bottom: 20px;
+   color: rgb(0, 0, 0);
+   font-family: sans-serif;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+}
+
+                           /* 35% Discount part */
+
+#section2 {
+   display: flex;
+}
+
+#fillbg {
+   transform: translate(20%, 30%);
+   overflow: hidden;
+   width: 510px;
+   height: 400px;
+}
+
+#truelearner {
+   margin-left: 150px;
+   margin-bottom: 300px;
+   margin-top: 100px;
+   text-align: center;
+   color: black;
+   font-family: sans-serif;
+   font-size: 60px;
+   font-style: none;
+   font-weight: 600;
+   line-height: normal;
+}
+
+#disimg {
+   margin-top: 300px;
+   margin-left: -430px;
+   height: 20vh;
+}
+
+#bgbckstyle2 {
+   display: block;
+   width: 500px;
+   height: 500px;
+   transform: translate(-1300px, 100%);
+}
+
+                                 /* workers part */
+
+#workimg {
+   margin-bottom: 100px;
+   align-items: center;
+   margin-top: 50px;
+   display: flex;
+   width: 1520px;
+   height: 391px;
+   flex-shrink: 0;
+   background: linear-gradient(90deg, rgba(234.14, 185.71, 45.03, 0.39) 37%, rgba(255, 220.79, 119.41, 0) 93%, rgba(153, 144.94, 121.08, 0) 100%);
+}
+
+#poto1 {
+   transform: translate(100%, -60%);
+   object-fit: cover;
+   margin-bottom: 100px;
+   overflow: hidden;
+   width: 350px;
+   height: 250px;
+   flex-shrink: 0;
+   aspect-ratio: 412/275;
+   border-radius: 90px;
+}
+
+#poto2 {
+   transform: translate(-80%, -5%);
+   object-fit: cover;
+   overflow: hidden;
+   width: 350px;
+   height: 250px;
+   flex-shrink: 0;
+   aspect-ratio: 412/275;
+   border-radius: 90px;
+}
+
+#poto3 {
+   transform: translate(-100%, 60%);
+   object-fit: cover;
+   overflow: hidden;
+   width: 350px;
+   height: 250px;
+   flex-shrink: 0;
+   aspect-ratio: 412/275;
+   border-radius: 90px;
+}
+
+#ucome {
+   margin-left: -300px;
+   margin-bottom: 200px;
+   color: #000;
+   font-family: Inter;
+   font-size: 50px;
+   font-style: normal;
+   font-weight: 577;
+   line-height: normal
+}
+
+#opertunity {
+   margin-left: -730px;
+   margin-top: 60px;
+   color: #000;
+   font-family: sans-serif;
+   font-size: 30px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+}
+
+#join {
+   display: flex;
+   margin-bottom: -250px;
+   margin-left: -735px;
+   width: 175px;
+   height: 40px;
+   flex-shrink: 0;
+   border-radius: 30px;
+   background-color: black;
+   transition: transform 0.8s ease;
+}
+
+#join:hover {
+   transform: scale(0.8);
+}
+
+#joinusbtn {
+   margin-top: 5px;
+   margin-left: 45px;
+   color: #FFF;
+   font-family: sans-serif;
+   font-size: 25px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}
+
+#bgbckstyle1 {
+   opacity: 50%;
+   overflow: hidden;
+   width: 250px;
+   height: 500px;
+   transform: translate(139%, 25%);
+}
+
+                                          /* Meet our student section styles */
+
+
+#ourstpara {
+   margin-top: 150px;
+   text-align: center;
+   align-items: center;
+   color: #000;
+   font-family: sans-serif;
+   font-size: 50px;
+   font-style: normal;
+   font-weight: 700;
+}
+
+#million {
+   margin-bottom: 75px;
+   margin-top: -40px;
+   text-align: center;
+   font-size: 25px;
+}
+
+#ourstu {
+   justify-content: center;
+   margin-bottom: 100px;
+   display: flex;
+}
+
+#card1 {
+   border: 5px solid transparent;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+   margin-left: 80px;
+   width: 400px;
+   height: 950px;
+   flex-shrink: 0;
+   border-radius: 76px;
+}
+
+#pic1 {
+   margin-top: 30px;
+   margin-left: 90px;
+   width: 230px;
+   height: 230px;
+   flex-shrink: 0;
+   border-radius: 140px;
+}
+
+#pic1name {
+   text-align: center;
+   font-size: 28px;
+}
+
+#pic1detail {
+   text-align: center;
+   color: #000;
+   text-align: center;
+   font-family: sans-serif;
+   font-size: 28px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}
+
+#card2 {
+   border: 5px solid transparent;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+   margin-left: 40px;
+   width: 400px;
+   height: 950px;
+   flex-shrink: 0;
+   border-radius: 76px;
+}
+
+#pic2 {
+   margin-top: 30px;
+   margin-left: 90px;
+   width: 230px;
+   height: 230px;
+   flex-shrink: 0;
+   border-radius: 140px;
+}
+
+#pic2name {
+   text-align: center;
+   font-size: 28px;
+}
+
+#pic2detail {
+   text-align: center;
+   color: #000;
+   text-align: center;
+   font-family: sans-serif;
+   font-size: 28px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}
+
+#card3 {
+   border: 5px solid transparent;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+   margin-left: 40px;
+   margin-right: 80px;
+   width: 400px;
+   height: 950px;
+   flex-shrink: 0;
+   border-radius: 76px;
+}
+
+#pic3 {
+   margin-top: 30px;
+   margin-left: 90px;
+   width: 230px;
+   height: 230px;
+   flex-shrink: 0;
+   border-radius: 140px;
+}
+
+#pic3detail {
+   text-align: center;
+   color: #000;
+   text-align: center;
+   font-family: sans-serif;
+   font-size: 28px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}
+
+#pic3name {
+   text-align: center;
+   font-size: 28px;
+}
