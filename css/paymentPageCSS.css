@@ -125,50 +125,41 @@ input{
     width: 200px;
     height: 30px;
 }
-.cancel{
-    width: 70px;
-    height: 40px;
-    background-color:  black;
-    color: white;
-    border: none;
-    margin-left: 0px;
-    font-size: 13px;
-}
-.cancel:hover{
 
-    background-color: red;
-    
-}
 
 .reset{
     width: 70px;
     height: 40px;
-    background-color:  black;
-    color: white;
+    background-color:  rgba(243, 212, 74, 0.993);
+    color: rgb(0, 0, 0);
     border: none;
-    font-size: 13px;
-
+    font-size: 15px;
+    margin-left: 300px;
+    font-size: 15px;border-radius: 5px;
 }
 .reset:hover{
 
     background-color: red;
+    transition: 0.8s ease;
 
 }
 .pay{
 
-    width: 70px;
+    width: 90px;
     height: 40px;
-    background-color:  black;
-    color: white;
+    background-color:  rgba(243, 212, 74, 0.993);;
+    color: rgb(0, 0, 0);
     border: none;
-    font-size: 13px;
+    font-size: 15px;border-radius: 5px;
 }
 .pay:hover{
 
     background-color: green;
+    transition: 0.8s ease;
 }
 .btns{
     margin-top: 20px;
+
   
     
 }
@@ -211,11 +202,12 @@ input{
 #ex-error,#cvv-error{
     
  
-  font-size: 16px;
+  font-size: 17px;
   
-    color: rgb(255, 134, 134);
+    color: rgb(224, 38, 38);
     margin-bottom: none;
    display: block;
+   
     
 }
 
