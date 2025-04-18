@@ -29,7 +29,7 @@ body{
 }
 
 .header{
-    background-color: hsl(51, 76%, 48%);
+    background-color: var(--main-color);
     color: #570d0d;
     padding: 20px;
     text-align: center;
@@ -93,7 +93,7 @@ body{
 .info .subject{
     color: rgb(95, 87, 87);
     margin-bottom: 8px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .info .contact{
