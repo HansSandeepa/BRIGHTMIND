@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About page</title>
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link href="./css/about.css" rel="stylesheet">
-    <link href="./css/main.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Bright Mind</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/loginn.css">
+
 </head>
 
 <body>
-
     <!-- side navgation bar -->
     <div class="sidebar">
 
@@ -35,7 +36,7 @@
             <div class="topContent">
                 <ul class="sideBarLists">
 
-                    <li class="sideBarList">
+                    <li class="sideBarList" id="selectedNavItem">
                         <a href="#" class="nav-link">
                             Home
                         </a>
@@ -53,7 +54,7 @@
                         </a>
                     </li>
 
-                    <li class="sideBarList" id="selectedNavItem">
+                    <li class="sideBarList">
                         <a href="./about.html" class="nav-link">
                             About Us
                         </a>
@@ -120,81 +121,52 @@
         <!-- do not delete this element -->
     </div>
 
-
-    <!-- full content -->
-    <div class="fullContent">
-        <!-- About section image -->
-        <div class="about-image"></div>
-
-        <!-- About section -->
-        <div class="about">
-            <h2 class="topic1">About Us</h2>
-            <h4 class="sub-topic">Empowering Learning, Anywhere, Anytime</h4>
-            <p class="content">Welcome to Bright Mind, where education meets innovation! We are a cutting-edge online
-                learning platform designed to provide high-quality courses, interactive quizzes, and certification
-                programs to learners worldwide. Our mission is to make education accessible, engaging, and effective for
-                everyone.</p>
+    
+    <!-- CONTECT SECTION -->
+    <section>
+        <div id="imgContainer">
+            <!--left side image-->
+            <img src="./assets/lahiru/login.jpg" alt="login">
         </div>
 
-        <!-- Mission section image -->
-        <div class="mission-image"></div>
+        <!--form part-->
+        <div id="formContainer">
+            <form class="form" onsubmit="func()">
 
-        <!-- Mission section -->
-        <div class="mission">
+                <div class="sigin">
+                    <h1>LOGIN PAGE</h1> <br />
+                    <label>User Name:</label><br />
+                    <input type="text" name="username" id="username" required><br /><br />
 
-            <h2 class="topic1">Our Mission</h2>
-            <h4 class="sub-topic">We believe that learning should be:</h4>
-            <ul>
-                <li>
-                    <p class="content">Accessible: Available to anyone with an internet connection</p>
-                </li>
-                <li>
-                    <p class="content">Engaging: Interactive courses that keep you motivated</p>
-                </li>
-                <li>
-                    <p class="content">Practical: Skills you can apply in real-world situations</p>
-                </li>
-                <li>
-                    <p class="content">Affordable: High-quality education without the high costs</p>
-                </li>
-            </ul>
+                    <label>Password</label><br />
+                    <input type="password" name="password" id="password" required><br /><br />
 
+                    <label><input class="checkbox" type="checkbox" name="password">Remeber me</label>
+
+                    <button type="submit"><label class="sumbit">LOGIN</label></button>
+                    <br />
+
+
+                    <div class="orlogin">or login with</div>
+
+                    <!--icon part-->
+                    <a href=""><img class="icon" src="./assets/lahiru/facebook-new.png"></a>
+                    <a href=""><img class="icon" src="./assets/lahiru/google new.jpg"></a>
+                    <a href=""><img class="icon" src="./assets/lahiru/twitter-new.png"></a>
+                    <br />
+
+
+
+                    <div class="end">
+                        Creat a New Account<br />
+                        <a href="sign.html">SIGN UP </a>
+                    </div>
+                    <p id = "demo"></p>
+                </div>
+            </form>
         </div>
+    </section>
 
-        <!-- Why choose main section -->
-        <div class="main">
-            <!-- Why choose us section -->
-            <h1 class="choose-topic">WHY CHOOSE US?</h1>
-
-            <!-- Why choose us section first row -->
-            <div class="choose1">
-                <div class="card">
-                    <h2>Learn Anywhere</h2>
-                    <h4>Access courses on any device, anytime</h4>
-                </div>
-
-                <div class="card">
-                    <h2>Expert Teachers</h2>
-                    <h4>Learn from industry leaders and top educators</h4>
-                </div>
-
-            </div>
-            <!-- Why choose us section second row -->
-            <div class="choose2">
-                <div class="card">
-                    <h2>Career Growth</h2>
-                    <h4>Gain skills that employers value</h4>
-                </div>
-
-                <div class="card">
-                    <h2>Vibrant Community</h2>
-                    <h4>Connect with fellow learners worldwide</h4>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
     <!-- FOOTER SECTION  -->
     <footer>
 
@@ -236,8 +208,9 @@
     </footer>
 
     <!-- import javascript files here -->
-    <script src="./js/navbar.js"></script>
+     <script src="./js/navbar.js"></script>
     <script src="./js/getYear.js"></script>
+    <script src="./js/loginjava.js"></script>
 
 </body>
 

@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About page</title>
+    <title>Bright Mind</title>
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link href="./css/about.css" rel="stylesheet">
-    <link href="./css/main.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/paymentPageCSS.css">
+    
 </head>
 
-<body>
 
+<body>
     <!-- side navgation bar -->
     <div class="sidebar">
 
@@ -35,7 +38,7 @@
             <div class="topContent">
                 <ul class="sideBarLists">
 
-                    <li class="sideBarList">
+                    <li class="sideBarList" id="selectedNavItem">
                         <a href="#" class="nav-link">
                             Home
                         </a>
@@ -53,7 +56,7 @@
                         </a>
                     </li>
 
-                    <li class="sideBarList" id="selectedNavItem">
+                    <li class="sideBarList">
                         <a href="./about.html" class="nav-link">
                             About Us
                         </a>
@@ -112,89 +115,130 @@
         </div>
 
         <div id="loginBtnSection">
-            <a href="#">Log In</a>
-            <a href="#">Sign In</a>
+            <a href="login.html">Log In</a>
+            <a href="sign.html">Sign In</a>
         </div>
     </header>
     <div id="headerWrapper">
         <!-- do not delete this element -->
     </div>
 
-
-    <!-- full content -->
-    <div class="fullContent">
-        <!-- About section image -->
-        <div class="about-image"></div>
-
-        <!-- About section -->
-        <div class="about">
-            <h2 class="topic1">About Us</h2>
-            <h4 class="sub-topic">Empowering Learning, Anywhere, Anytime</h4>
-            <p class="content">Welcome to Bright Mind, where education meets innovation! We are a cutting-edge online
-                learning platform designed to provide high-quality courses, interactive quizzes, and certification
-                programs to learners worldwide. Our mission is to make education accessible, engaging, and effective for
-                everyone.</p>
+   
+    
+        <div class="wrapper">
+            
+            <form action="#" method="get" enctype="application/x-www-form-urlencoded" onsubmit=" return validateForm()" >
+    
+                <h1>
+                    Payment Method
+                </h1>
+    
+                
+                <div class="payment-checkbox">
+                    <div class="pmnt">
+                        <img src="assets/PaymentPageAssets/icons8-visa-card-100.png">
+                    </div>
+                    <div class="pmnt">
+                    <label class="payment-text">Visa Card</label>
+                    </div>
+                    <div class="pmnt">
+                        <input type="radio" value="credit-card" name="pm" class="radio" id="cc" required>
+                    </div>
+                </div>
+                    
+                
+    
+    
+                <div class="payment-checkbox">
+                    <div class="pmnt" >
+                        <img src="assets/PaymentPageAssets/master.png">
+                    </div>
+                    <div class="pmnt">
+    
+                        <label class="payment-text">Master card</label>
+                    </div>
+                    <div class="pmnt">
+    
+                        <input type="radio" value="payoneer" name="pm" class="radio" id="payoneer" required>
+                    </div>
+                    
+                </div>
+    
+    
+                <div class="payment-checkbox">
+                    <div class="pmnt" >
+                        <img src="assets/PaymentPageAssets/AMEX.png">
+                    </div>
+                    <div class="pmnt">
+                        <label class="payment-text">AMEX</label>
+                    </div>
+                    <div class="pmnt">
+                        <input type="radio" value="paypal" name="pm" class="radio" id="payp" required>
+                    </div>
+                   
+                    
+                    
+                </div>
+    
+                <hr>
+                
+                <div class="lbl">
+                    <label class="lbl">Cardholder name</label><br>
+                    <input type="text" placeholder="Enter Name Here" class="inpt"  id="idname" maxlength="30">
+                    <span id="error-name"> </span>
+                </div>
+                
+                <div class="lbl">
+                <label class="lbl">Card number</label><br>
+                <input type="text" placeholder="0000 0000 0000 0000" class="inpt" minlength="16" maxlength="16" id="card-number">
+                <span id="error-card"> </span>
+                </div>
+    
+                <div class="cvv">
+                    <div class="cvvin">
+                        <label>Expiration date</label> <br>
+                        <input type="text" placeholder="--/--" class="excvv" maxlength="5" id="exdate">
+                        <span id="ex-error" ></span>
+                    </div>
+                    <div class="cvvin" id="cvvin">
+                        <label>CVV</label><br>
+                        <input type="password" placeholder="***" class="excvv" maxlength="3" id="cvvnum" minlength="3">
+                        <span id="cvv-error"></span>
+                    </div>
+                </div>
+                
+               
+    
+                
+                
+    
+                <br><div class="lbl">
+                    <input type="checkbox" class="terms" required>
+                    <label class="lbl">Save card information for future payments</label>
+                </div>
+    
+                <hr>
+                <div class="btns">
+                    
+                    <input type="reset" class="reset">
+                    <input type="submit" class="pay" style="text-decoration: none;"  value="Pay Now" >
+                    
+                </div>
+                
+               
+    
+            </form>
+            
+    
+    
+    
         </div>
+      
+   
+        
 
-        <!-- Mission section image -->
-        <div class="mission-image"></div>
 
-        <!-- Mission section -->
-        <div class="mission">
 
-            <h2 class="topic1">Our Mission</h2>
-            <h4 class="sub-topic">We believe that learning should be:</h4>
-            <ul>
-                <li>
-                    <p class="content">Accessible: Available to anyone with an internet connection</p>
-                </li>
-                <li>
-                    <p class="content">Engaging: Interactive courses that keep you motivated</p>
-                </li>
-                <li>
-                    <p class="content">Practical: Skills you can apply in real-world situations</p>
-                </li>
-                <li>
-                    <p class="content">Affordable: High-quality education without the high costs</p>
-                </li>
-            </ul>
-
-        </div>
-
-        <!-- Why choose main section -->
-        <div class="main">
-            <!-- Why choose us section -->
-            <h1 class="choose-topic">WHY CHOOSE US?</h1>
-
-            <!-- Why choose us section first row -->
-            <div class="choose1">
-                <div class="card">
-                    <h2>Learn Anywhere</h2>
-                    <h4>Access courses on any device, anytime</h4>
-                </div>
-
-                <div class="card">
-                    <h2>Expert Teachers</h2>
-                    <h4>Learn from industry leaders and top educators</h4>
-                </div>
-
-            </div>
-            <!-- Why choose us section second row -->
-            <div class="choose2">
-                <div class="card">
-                    <h2>Career Growth</h2>
-                    <h4>Gain skills that employers value</h4>
-                </div>
-
-                <div class="card">
-                    <h2>Vibrant Community</h2>
-                    <h4>Connect with fellow learners worldwide</h4>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
     <!-- FOOTER SECTION  -->
     <footer>
 
@@ -236,8 +280,9 @@
     </footer>
 
     <!-- import javascript files here -->
-    <script src="./js/navbar.js"></script>
-    <script src="./js/getYear.js"></script>
+     <script src="./js/navbar.js"></script>
+     <script src="./js/getYear.js"></script>
+     <script src="js/PaymentPage.js"></script>
 
 </body>
 

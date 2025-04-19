@@ -1,0 +1,44 @@
+
+body{
+     background-image: url(../assets/PaymentPageAssets/2903544.jpg);
+     background-position: fixed;
+     background-size: cover;
+     background-repeat: no-repeat;
+ }
+ .wrapper{
+
+    display: grid;
+    place-self: center;
+    place-items: center;
+    margin-top: 110px;
+    width: 700px;
+    height: 500px;
+    background: transparent;
+    backdrop-filter:blur(10px);
+    border-radius: 20px;
+   
+   
+}
+
+.paysuc{
+
+    font-size: 60px;
+    margin-bottom: 0px;
+}
+.paysucp{
+    font-size: 20px;
+    margin-top: 0px;
+}
+button{
+    background-color: rgb(47, 182, 47);
+    border: none;
+    width :500px;
+    height:50px;
+    color: white;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    
+
+}
+

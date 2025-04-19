@@ -1,0 +1,111 @@
+/* ligin image container */
+section {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* web page left side main image*/
+#imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 40%;
+}
+
+#imgContainer>img {
+    width: 80%;
+}
+
+/* yellow background page right side*/
+form {
+    background-color: rgb(245, 209, 34);
+    height: 680px;
+    padding-top: 20px;
+    float: right;
+    width: 500px;
+    padding-right: 150px;
+    padding-left: 155px;
+}
+
+/*white background from page*/
+.sigin {
+    align-items: center;
+    width: 350px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: white;
+    padding-left: 20px;
+    border-radius: 25px;
+    margin: 100px;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    width: 320px;
+    height: 25px;
+    border-radius: 8px;
+    font-weight: 300;
+    border: 2px solid black;
+
+}
+
+/*login button */
+form button {
+    cursor: pointer;
+    width: 320px;
+    height: 30px;
+    border-radius: 8px;
+    margin-top: 40px;
+    background-color: rgb(225, 194, 17);
+    font-size: 18px;
+}
+
+/*username, password,Remember mainly design this part*/
+label {
+    font-size: 18px;
+}
+
+/*login button inside "login" word create this part*/
+.sumbit {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*checkbox square shape create a this part*/
+.checkbox {
+    width: 25px;
+    height: 15px;
+    padding-left: 25px;
+    border: 2px solid black;
+
+}
+
+/*facebook,googl and twitter logo design this part*/
+.icon {
+    width: 25px;
+    height: 25px;
+    align-items: normal;
+    padding-left: 30px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+
+/*end of the page "create a new account" creat a this part*/
+.end {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/*next page link"sign page" create a this part*/
+.orlogin {
+    text-align: center;
+    font-size: 19px;
+    margin-top: 20px;
+}

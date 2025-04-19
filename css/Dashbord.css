@@ -1,0 +1,365 @@
+section {
+    margin-bottom: 60px;
+}
+
+#main1 {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10vh 60vh;
+
+}
+
+#main2 {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+#sub_main {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    column-gap: 15px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+#p1 {
+    padding-top: 0;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    margin: 0 0;
+    margin-left: 10px;
+}
+
+#rewards {
+    height: 200px;
+
+}
+
+#quizzes {
+    height: 200px;
+    overflow: auto;
+    margin-top: 5px;
+    border-color: antiquewhite;
+    border-style: solid;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    box-shadow: 2px 2px 2px;
+}
+
+#forum_activitys {
+    height: 190px;
+    margin-top: 15px;
+    border-color: antiquewhite;
+    border-style: solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px 2px;
+}
+
+#courses {
+    overflow: auto;
+    border-color: antiquewhite;
+    border-style: solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px 2px;
+}
+
+#topic {
+    height: 30%;
+    margin-bottom: 2px;
+    background-color: #fff;
+}
+
+#maths,
+#c,
+#maltimedia,
+#hardware,
+#javascript,
+#javascript {
+    height: 20%;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    border-color: rgb(171, 174, 174);
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+#p_b {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+#progress_bar {
+    width: 200px;
+}
+
+.classp110 {
+    margin: 0 0;
+    margin-left: 10px;
+    margin-right: 2px;
+}
+
+
+#topic2 {
+    height: 50%;
+    margin-bottom: 20px;
+    border-width: 1px;
+    box-shadow: 2px 2px 2px;
+    border-color: rgb(171, 174, 174);
+    border-color: antiquewhite;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+#crtificate {
+    height: 40%;
+    border-width: 1px;
+    box-shadow: 2px 2px 2px;
+    background-color: #fff;
+    border-color: antiquewhite;
+    border-style: solid;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 40% 60%;
+}
+
+#topic_certificat {}
+
+#Certificat_file {
+    display: grid;
+    grid-template-columns: 40px 40px 40px 40px;
+    column-gap: 4px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#c_t_1 {
+    margin: 0 0;
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+#c_f_1 {
+    height: 40px;
+    border-radius: 50%;
+
+}
+
+#c_f_i {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border-color: #212121;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#c_activity {
+    display: flex;
+    align-items: center;
+}
+
+#c2,
+#c3,
+#c4 {
+    height: 20%;
+    margin-bottom: 2px;
+    background-color: #fff;
+    border-bottom: px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+#marks_value {
+    font-size: 25px;
+    font-weight: bolder;
+    color: rgb(5, 164, 249);
+}
+
+#marks_value,
+#grade {
+    margin: 0 0;
+}
+
+#c_marks {
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+#c_m_v,
+#c_m_v1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+#grade {
+    margin: 0 0;
+    font-size: smaller;
+}
+
+#c1 {
+    height: 20%;
+    margin-bottom: 2px;
+    height: 25%;
+    background-color: #fff;
+    border-bottom: 2px;
+}
+
+#c5 {
+    height: 15%;
+    margin-bottom: 2px;
+    background-color: #fff;
+    border-bottom: 1px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+
+}
+
+#result {
+    margin: 0 0;
+    padding: 1px 1px;
+}
+
+#f1 {
+    height: 40%;
+    display: grid;
+    grid-template-rows: 40% 60%;
+}
+
+#f1_d2 {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    display: flex;
+    align-items: center;
+}
+
+#f1_d1_1_i {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+#f1_d1_2_p {
+    font-weight: bold;
+    font-size: larger;
+}
+
+#f1,
+#f2,
+#f3,
+#f4 {
+    background-color: #fff;
+    margin-bottom: 2px;
+}
+
+#f2,
+#f3,
+#f4 {
+    display: flex;
+    align-items: center;
+    height: 20%;
+}
+
+#p11,
+#p22 {
+    margin: 0 0;
+    margin-left: 10px;
+}
+
+#p22 {
+    font-size: 15px;
+}
+
+#p11 {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+#topicq {
+    font-size: 25px;
+    margin: 0 0;
+    margin-bottom: 3px;
+    margin-left: 10px;
+}
+
+#topicq2 {
+    margin: 0 0;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+#group_project,
+#Quizzes_Marks,
+#individual_assignment {
+    margin: 0 0;
+    margin-left: 10px;
+}
+
+
+#rewards_topic,
+#achievements {
+    margin: 0 0;
+    margin-left: 10px;
+}
+
+#achievements {
+    font-size: 15px;
+}
+
+#rewards_topic {
+    font-size: 25px;
+    padding: 0 0;
+
+}
+
+#icon {
+    display: grid;
+    grid-template-columns: 40px 40px 40px 40px 40px;
+    column-gap: 8px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+
+#img1 {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#link1 {
+    cursor: pointer;
+}
+
+#user1 {
+    margin: 0 0;
+    margin-left: 10px;
+    font-size: larger;
+}
+
+#user2 {
+    margin: 0 0;
+    margin-left: 10px;
+    display: inline;
+    font-size: 15px;
+}
+
+#user3 {
+    display: inline;
+    font-size: smaller;
+}
