@@ -112,7 +112,8 @@ header {
     display: block;
 }
 
-#dropdown:hover img {
+
+#dropdown:hover img{
     filter: brightness(0) invert(1);
     transform: scale(1.2);
 }
