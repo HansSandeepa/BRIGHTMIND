@@ -1,0 +1,129 @@
+/* course title content*/
+#title_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-inline: 80px;
+    margin-top: 60px;
+}
+
+#courseTitle{
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 0px 0px 4px #ffffff;
+    margin-bottom: 40px;
+}
+
+#courseDescription{
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#enrollBtn{
+    background-color: #ffbe00;
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#enrollBtn:hover{
+    background-color: #c99300;
+}
+
+#btnMainText{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/*ratings bar*/
+#ratings{
+    position: relative;
+    top: -40px;
+    z-index: 0;
+    display: flex;
+    background-color: #ffffff;
+    padding-block: 30px;
+    margin-inline: auto;
+    justify-content: space-around;
+    align-items: center;
+    width: 85%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1),
+                0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ratings_title{
+    margin-block: 0;
+}
+
+.ratings_subtext{
+    font-size: 0.8em;
+    color: rgb(86, 86, 86);
+}
+
+#ratings_star{
+    width: 15px;
+    height: auto;
+}
+
+/* course details common css */
+.course_details{
+    width: 80%;
+    margin-inline: auto;
+}
+
+ .text_content{
+    margin-left: 40px;
+ }
+
+ /* course content table*/
+#course_content{
+    padding: 30px;
+    width: 100%;
+}
+
+#course_content_table{
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-inline: auto;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#course_content_table th, #course_content_table td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#course_content_table td{
+    padding: 10px;
+    text-align: center;
+}
+
+#course_content_table tr:nth-child(even){
+    background-color: #eaeaea;
+}
+
+/* riqurements section */
+#requirements_list > li{
+    margin-block: 10px;
+    font-size: 1.2em;
+}
+
+#description{
+    font-size: 1.1em;
+}
+
+#who_is_this_course_for{
+    font-size: 1.1em;
+}
