@@ -1,0 +1,25 @@
+#paidTitle{
+    background-color: #ffbe00;
+}
+
+#courseDescription{
+    color: black;
+}
+
+#courseTitleContainer{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 80px;
+    margin-inline: auto;
+}
+
+#enrollBtn{
+    background-color: white;
+}
+
+#enrollBtn:hover{
+    color: white;
+}

@@ -812,3 +812,8 @@ details {
     font-family: sans-serif;
     color: rgb(104, 86, 86);
 }
+
+/*set cursor to pointer courses*/
+.courses{
+    cursor: pointer;
+}

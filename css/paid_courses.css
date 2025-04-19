@@ -1,0 +1,46 @@
+/* paid courses content */
+
+#paidTitle{
+    width: auto;
+    z-index: 0;
+    margin-left: 50px;
+}
+
+#video{
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    top: -350px;
+    right: 40px;
+    position: relative;
+    filter: opacity(0.8) blur(2px) brightness(0.5);
+}
+
+#ratings{
+    position: relative;
+    top: -380px;
+}
+
+/*course content positioning*/
+#course_content{
+    position: relative;
+    top: -320px;
+}
+
+/* requirments positioning */
+#requirements{
+    position: relative;
+    top: -300px;
+}
+
+/* description positioning */
+#description{
+    position: relative;
+    top: -250px;
+}
+
+/* who is this course for positioning */
+#who_is_this_course_for{
+    position: relative;
+    top: -200px;
+}
