@@ -10,7 +10,7 @@ document.querySelectorAll('.paid_content').forEach(
 document.querySelectorAll('.free-content').forEach(
     function (course) {
         course.addEventListener('click', function () {
-            window.location.href = '/free_courses.html';
+            window.location.href = './free_courses.html';
         });
     }
 );
