@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/individual_courses.css">
+    <link rel="stylesheet" href="./css/free_courses.css">
 </head>
 
 
@@ -37,14 +38,14 @@
             <div class="topContent">
                 <ul class="sideBarLists">
 
-                    <li class="sideBarList" id="selectedNavItem">
+                    <li class="sideBarList" >
                         <a href="#" class="nav-link">
                             Home
                         </a>
                     </li>
 
-                    <li class="sideBarList">
-                        <a href="#" class="nav-link">
+                    <li class="sideBarList" id="selectedNavItem">
+                        <a href="./courses.html" class="nav-link">
                             Courses
                         </a>
                     </li>
@@ -128,42 +129,51 @@
         <!-- title container -->
         <div id="title_container">
             <div id="paidTitle">
-                <h1 id="courseTitle">
-                    AI Mastery:
-                    <br>
-                    From Beginner to Expert in ChatGPT and Midjourney
-                </h1>
-                <p id="courseDescription">
-                    This course is designed to take you from a complete beginner to an expert in AI, focusing on
-                    <br>
-                    two of the most powerful tools available today: ChatGPT and Midjourney.
-                    <br>
-                    You will learn how to leverage these tools to create stunning images and generate human-like text,
-                    <br>
-                    all while gaining a deep understanding of the underlying principles of AI.
-                </p>
-                <button id="enrollBtn">
-                    <div id="btnMainText">Enroll for: $19.99</div>
-                    <div id="btnSubText">Discount: 10%</div>
-                </button>
+
+                <div id="courseTitleContainer">
+
+                    <div>
+
+                        <h1 id="courseTitle">
+                            Financial Markert
+                        </h1>
+                        <p id="courseDescription">
+                            This course introduces financial markets, covering stocks,
+                            <br>
+                            bonds, derivatives, and investment strategies.
+                            <br>
+                            Perfect for beginners, it helps you analyze trends, make informed decisions,
+                            <br>
+                            and manage risks effectively.
+                        </p>
+                        <button id="enrollBtn">
+                            <div id="btnMainText">Enroll for Free!</div>
+                            <div id="btnSubText">Limited time offer</div>
+                        </button>
+                    </div>
+
+                    <div>
+                        <img src="./assets/courses/banalyze.jpeg" alt="course image" id="courseImage">
+                    </div>
+                </div>
 
             </div>
 
             <!-- ratings -->
             <div id="ratings">
                 <div>
-                    <h3 class="ratings_title">2 Course Series</h3>
+                    <h3 class="ratings_title">3 Course Series</h3>
                     <span class="ratings_subtext">Earn a career credential that demonstrates your expertis</span>
                 </div>
 
                 <div>
-                    <h3 class="ratings_title">4.5 <img src="./assets/individual_courses/star-7207.svg" alt="star"
+                    <h3 class="ratings_title">4.8 <img src="./assets/individual_courses/star-7207.svg" alt="star"
                             id="ratings_star"></h3>
                     <span class="ratings_subtext">Earn a career credential that demonstrates your expertis</span>
                 </div>
 
                 <div>
-                    <h3 class="ratings_title">1 Month</h3>
+                    <h3 class="ratings_title">3 Month</h3>
                     <span class="ratings_subtext">at 7 hours per week.</span>
                 </div>
 
@@ -187,46 +197,50 @@
                 </tr>
                 <tr>
                     <td>Module 1</td>
-                    <td>Introduction to AI and ChatGPT</td>
-                    <td>2 hours</td>
-                </tr>
-                <tr>
-                    <td>Module 2</td>
-                    <td>Understanding Midjourney</td>
-                    <td>3 hours</td>
-                </tr>
-                <tr>
-                    <td>Module 3</td>
-                    <td>Advanced ChatGPT Techniques</td>
-                    <td>4 hours</td>
-                </tr>
-                <tr>
-                    <td>Module 4</td>
-                    <td>Creating Stunning Images with Midjourney</td>
-                    <td>5 hours</td>
-                </tr>
-                <tr>
-                    <td>Module 5</td>
-                    <td>Real-World Applications of AI</td>
+                    <td>Introduction to Financial Markets</td>
                     <td>6 hours</td>
                 </tr>
                 <tr>
-                    <td>Module 6</td>
-                    <td>Final Project and Certification</td>
-                    <td>8 hours</td>
+                    <td>Module 2</td>
+                    <td>Understanding Stocks and Equity Markets</td>
+                    <td>10 hours</td>
                 </tr>
-
+                <tr>
+                    <td>Module 3</td>
+                    <td>Bonds and Fixed Income Securities</td>
+                    <td>12 hours</td>
+                </tr>
+                <tr>
+                    <td>Module 4</td>
+                    <td>Derivatives: Options and Futures</td>
+                    <td>14 hours</td>
+                </tr>
+                <tr>
+                    <td>Module 5</td>
+                    <td>Investment Strategies and Portfolio Management</td>
+                    <td>16 hours</td>
+                </tr>
+                <tr>
+                    <td>Module 6</td>
+                    <td>Risk Management in Financial Markets</td>
+                    <td>12 hours</td>
+                </tr>
+                <tr>
+                    <td>Module 7</td>
+                    <td>Global Financial Markets and Trends</td>
+                    <td>14 hours</td>
+                </tr>
             </table>
-        </div>
         </div>
 
         <!-- requirements -->
         <div id="requirements" class="course_details">
             <h2 id="requirements_title">Requirements</h2>
             <ul id="requirements_list">
-                <li>Basic computer skills</li>
-                <li>Willingness to learn</li>
-                <li>No prior knowledge of AI is required</li>
+                <li>Basic understanding of mathematics</li>
+                <li>Interest in financial markets and investments</li>
+                <li>No prior experience in finance is required</li>
+                <li>Access to a computer or mobile device with an internet connection</li>
             </ul>
         </div>
 
@@ -234,15 +248,15 @@
         <div id="description" class="course_details">
             <h2 id="description_title">Description</h2>
             <p id="description_text" class="text_content">
-                This course is designed to take you from a complete beginner to an expert in AI, focusing on two of the <br>
-                most powerful tools available today: ChatGPT and Midjourney.
+                The Financial Market course is designed to provide you with a comprehensive understanding of how
+                financial markets operate and their role in the global economy. Whether you're a beginner or looking to
+                deepen your knowledge, this course covers essential topics such as stock markets, bonds, derivatives,
+                and investment strategies.
                 <br><br>
-                You will learn how to leverage these tools to create stunning images and generate human-like text, <br>
-                all while gaining a deep understanding of the <br>
-                underlying principles of AI.
-                <br><br>
-                By the end of this course, you will have the skills and knowledge to use AI in your own projects and <br>
-                applications, and you will be well on your way to becoming an AI expert.
+                Through engaging lessons and real-world examples, you'll learn how to analyze market trends, make
+                informed investment decisions, and manage financial risks effectively. By the end of this course, you'll
+                have the skills and confidence to navigate the complexities of financial markets and take control of
+                your financial future.
             </p>
         </div>
 
@@ -250,9 +264,10 @@
         <div id="who_is_this_course_for" class="course_details">
             <h2 id="who_is_this_course_for_title">Who is this course for?</h2>
             <p id="who_is_this_course_for_text" class="text_content">
-                This course is designed for anyone who wants to learn about AI and how to use it in their own projects. <br>
-                Whether you are a complete beginner or have some experience with AI, this course will provide you with the <br>
-                knowledge and skills you need to succeed.
+                This course is ideal for anyone interested in understanding financial markets and investments. 
+                <br>
+                Whether you're a beginner looking to build a foundation or a professional seeking to enhance your knowledge, 
+                this course will provide valuable insights and practical skills to navigate the financial world effectively.
             </p>
         </div>
     </section>
@@ -301,7 +316,7 @@
     </footer>
 
     <!-- import javascript files here -->
-     <script src="./js/navbar.js"></script>
+    <script src="./js/navbar.js"></script>
     <script src="./js/getYear.js"></script>
 
 </body>
