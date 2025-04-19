@@ -123,33 +123,34 @@
     <!-- CONTECT SECTION -->
     <section>
         <div id="signImg">
-            <img src="./assets/lahiru/sign.jpg">
+            <img src="./assets/lahiru/sign.jpg" alt="sign img">
         </div>
 
         <div id="signForm">
-            <form action="" class="form">
+            <form class="form" onsubmit="validateForm(event)">
             
                 <div class="sigin">
                     <h1>SIGN PAGE</h1> <br />
-                    <label>User Name:</label><br />
-                    <input type="text" name="username" required><br /><br />
+                    <label for="username">User Name:</label><br />
+                    <input type="text" name="username" id="username" required><br /><br />
             
-                    <label>Email:</label><br />
-                    <input type="text" name="username" required><br /><br />
+                    <label for="email">Email:</label><br />
+                    <input type="text" name="email" id="email" required><br /><br />
             
-                    <label>Password:</label><br />
-                    <input type="text" name="password" required><br /><br />
+                    <label for="password">Password:</label><br />
+                    <input type="password" name="password" id="password" required><br /><br />
             
-                    <label>Conform password:</label><br />
-                    <input type="text" name="password" required><br /><br /><br />
+                    <label for="confirm-password">Conform password:</label><br />
+                    <input type="password" name="confirm-password" id="confirm-password" required><br /><br /><br />
             
-                    <label class="checkbox"><input class="checkbox" type="checkbox" name="password" required>I agree to the
+                    <label class="checkbox"><input class="checkbox" type="checkbox" name="checkbox" id="checkbox" required>I agree to the
                         <b>TEAM AND CONDITION </b></label>
             
                     <br /><br />
-                    <button><label class="sumbit">SUMBIT</label></button>
+                    <button type="submit"><label class="sumbit">SUMBIT</label></button>
             
                 </div>
+                <p id="demo"></p>
             </form>
             
         </div>
@@ -198,6 +199,7 @@
     <!-- import javascript files here -->
      <script src="./js/navbar.js"></script>
     <script src="./js/getYear.js"></script>
+    <script src="./js/signjava.js"></script>
 
     </body>
 

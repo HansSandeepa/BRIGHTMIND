@@ -56,19 +56,19 @@ input {
 }
 
 /*login button */
-button {
+form button {
+    cursor: pointer;
     width: 320px;
     height: 30px;
     border-radius: 8px;
     margin-top: 40px;
     background-color: rgb(225, 194, 17);
-
+    font-size: 18px;
 }
 
 /*username, password,Remember mainly design this part*/
 label {
     font-size: 18px;
-
 }
 
 /*login button inside "login" word create this part*/
