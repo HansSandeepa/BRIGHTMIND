@@ -131,7 +131,7 @@
 
         <!--form part-->
         <div id="formContainer">
-            <form action="" class="form">
+            <form class="form" onsubmit="func()">
 
                 <div class="sigin">
                     <h1>LOGIN PAGE</h1> <br />
@@ -139,11 +139,11 @@
                     <input type="text" name="username" id="username" required><br /><br />
 
                     <label>Password</label><br />
-                    <input type="text" name="password" id="password" required><br /><br />
+                    <input type="password" name="password" id="password" required><br /><br />
 
-                    <label><input class="checkbox" type="checkbox" name="password" required>Remeber me</label>
+                    <label><input class="checkbox" type="checkbox" name="password">Remeber me</label>
 
-                    <button onclick="func()"><label class="sumbit">LOGIN</label></button>
+                    <button type="submit"><label class="sumbit">LOGIN</label></button>
                     <br />
 
 
@@ -210,7 +210,7 @@
     <!-- import javascript files here -->
      <script src="./js/navbar.js"></script>
     <script src="./js/getYear.js"></script>
-    <script src="./loginjava.js"></script>
+    <script src="./js/loginjava.js"></script>
 
 </body>
 

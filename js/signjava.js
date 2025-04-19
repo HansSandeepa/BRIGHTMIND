@@ -1,10 +1,12 @@
 
-function validateForm() {
+function validateForm(e) {
+    e.preventDefault(); // Prevent the default form submission behavior
+
     var username = document.getElementById('username').value.trim();
     var email = document.getElementById('email').value.trim();
     var password = document.getElementById('password').value;
-    var confirm = document.getElementById('confirm').value;
-    var terms = document.getElementById('terms').checked;
+    var confirm = document.getElementById('confirm-password').value;
+    var terms = document.getElementById('checkbox').checked;
 
     if (!username || !email || !password || !confirm) {
         alert("All fields are required.");
@@ -32,6 +34,7 @@ function validateForm() {
         return false;
     }
 
+    alert("Form submitted successfully!");
     document.getElementById("demo").innerHTML = "Form submitted successfully!";
     return true;
 }
