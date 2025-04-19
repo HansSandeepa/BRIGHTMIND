@@ -76,7 +76,7 @@
 
 /* course details common css */
 .course_details{
-    width: 80%;
+    width: 80% !important;
     margin-inline: auto;
 }
 

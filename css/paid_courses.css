@@ -23,7 +23,6 @@
 
 /*course content positioning*/
 #course_content{
-    width: 80%;
     position: relative;
     top: -320px;
 }
