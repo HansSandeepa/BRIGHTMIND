@@ -1,0 +1,215 @@
+
+
+body{
+
+    background-image: url(../assets/PaymentPageAssets/2903544.jpg);
+    background-position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wrapper{
+
+    display: grid;
+    place-self: center;
+    place-content: center;
+    width: 600px;
+    height: 800px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    background: transparent;
+    backdrop-filter:blur(20px);
+    border-radius: 20px;
+    border: 1px solid black;
+   
+   
+   
+}
+.inpt,.excvv{
+
+    border-radius: 5px;
+    border: none;
+}
+label{
+
+    font-size: 25px;
+
+}
+h1{
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 50px;
+}
+.payment-checkbox{
+ 
+    margin-top: 10px;
+   
+    border-radius: 10px;
+    border-color: black;
+}
+.payment-checkbox:hover {
+    box-shadow: 0px 0px 20px rgba(172, 255, 47, 0.196);
+    cursor: pointer;
+
+
+}
+
+
+img{
+
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+   
+}
+.payment-text{
+
+    margin-left: 10px;
+    vertical-align:middle;
+    
+    
+    
+   
+    
+}
+.pmnt{
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+
+.inpt{
+
+    width: 100%;
+    height: 40px;
+   
+    
+}
+input{
+
+   font-size: 18px;
+}
+
+.radio{
+   width: 23px;
+   height: 23px;
+   vertical-align: middle;
+   accent-color: green;
+   
+
+  
+    
+
+
+}
+.terms{
+
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+.cvv{
+
+    display: grid;
+    grid-template-columns: 50px 50px;
+    display: inline-block;
+    width: 100%;
+}
+.cvvin{
+    display: inline-block;
+    
+    
+}
+.excvv{
+
+    width: 200px;
+    height: 30px;
+}
+
+
+.reset{
+    width: 70px;
+    height: 40px;
+    background-color:  rgba(243, 212, 74, 0.993);
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 15px;
+    margin-left: 300px;
+    font-size: 15px;border-radius: 5px;
+}
+.reset:hover{
+
+    background-color: red;
+    transition: 0.8s ease;
+
+}
+.pay{
+
+    width: 90px;
+    height: 40px;
+    background-color:  rgba(243, 212, 74, 0.993);;
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 15px;border-radius: 5px;
+}
+.pay:hover{
+
+    background-color: green;
+    transition: 0.8s ease;
+}
+.btns{
+    margin-top: 20px;
+
+  
+    
+}
+.lbl{
+    margin-top: 20px;
+}
+.cvv{
+    margin-top: 20px;
+}
+#cvvin{
+
+    margin-left: 50px;
+}
+#cc{
+    margin-left:180px;
+}
+#payoneer{
+
+    margin-left: 158px;
+}
+#payp{
+
+    margin-left: 219px;
+}
+#error-name{
+    position: relative;
+    bottom: 30px;
+    left: 260px;
+    font-size: 16px;
+    color: red;
+}
+#error-card{
+
+    position: relative;
+    bottom: 30px;
+    left: 260px;
+    font-size: 16px;
+    color: red;
+}
+#ex-error,#cvv-error{
+    
+ 
+  font-size: 17px;
+  
+    color: rgb(224, 38, 38);
+    margin-bottom: none;
+   display: block;
+   
+    
+}
+
+
+
