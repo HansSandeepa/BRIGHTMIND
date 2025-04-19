@@ -35,7 +35,7 @@ function validateForm(e) {
     }
 
     alert("Form submitted successfully!");
-    document.getElementById("demo").innerHTML = "Form submitted successfully!";
+    window.location.href = "Dashboard.html"; // Redirect to the DASHBOARD page after successful submission
     return true;
 }
 
