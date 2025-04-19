@@ -359,7 +359,16 @@ section {
     font-size: 15px;
 }
 
-#user3 {
+#user3, #user4 {
     display: inline;
     font-size: smaller;
+}
+
+#user4 {
+    cursor: pointer;
+}
+
+#user4:hover {
+    text-decoration: underline;
+    color: blue;
 }
