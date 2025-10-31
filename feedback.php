@@ -26,7 +26,8 @@
     $sql = "INSERT INTO feedback (name, email, message, rating)
             VALUES ('$name', '$email', '$message', '$rating')";
 
-    if ($conn->query($sql)) {
+
+    if (mysqli_query($conn,$sql)) {
        echo "<div style='
     background: #abe3b2ff; 
     color: #155724; 
