@@ -8,6 +8,7 @@
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
     <link href="./css/about.css" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/feedback.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -195,6 +196,31 @@
         </div>
 
     </div>
+    <!--Feedback Form-->
+
+    <div class="container">
+        <h2 class="ftopic">Feedback Form</h2>
+
+        <form method="POST" action="feed.php">
+            <label>Name</label>
+            <input type="text" name="name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Message</label>
+            <textarea name="message" rows="3" required></textarea>
+
+            <label>Rating (1-5)</label>
+            <input type="number" name="rating" min="1" max="5" required>
+
+            <button type="submit" name="submit">Submit Feedback</button>
+        </form>
+
+        <a href="feedback_view.php" class="btn-secondary">View All Feedback</a>
+    </div>
+
+
     <!-- FOOTER SECTION  -->
     <footer>
 
