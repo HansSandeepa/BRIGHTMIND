@@ -269,7 +269,10 @@
                             </div>
                             <div id="f1_d1_2">
                                 <p id="f1_d1_2_p">
-                                    K.K.D. BIMSHAN
+                                <?php 
+                                    "echo htmlspecialchars($username);"
+                                 ?>
+                                
                                 </p>
                             </div>
                         </div>
@@ -287,7 +290,8 @@
 
                     <div id="f4">
                         <p id="user2">Email address:</p>
-                        <p id="user4">dinithbimshan4@gmail.com</p>
+                        <p id="user4">    <p id="user4"><?php echo htmlspecialchars($email); ?></p>
+</p>
                     </div>
                 </div>
 

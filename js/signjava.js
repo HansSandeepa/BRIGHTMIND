@@ -2,6 +2,7 @@
 function validateForm(e) {
     e.preventDefault(); // Prevent the default form submission behavior
 
+    var form = e.target;
     var username = document.getElementById('username').value.trim();
     var email = document.getElementById('email').value.trim();
     var password = document.getElementById('password').value;
@@ -34,8 +35,9 @@ function validateForm(e) {
         return false;
     }
 
-    alert("Form submitted successfully!");
-    window.location.href = "Dashboard.html"; // Redirect to the DASHBOARD page after successful submission
-    return true;
+    // If validation passes, submit the form
+    form.submit();
+    return false; // Return false to prevent double submission
+
 }
 

@@ -1,80 +1,73 @@
 <?php
+session_start();
+
 $dbhost = 'localhost';
-$dbuser = 'root';  
+$dbuser = 'root';
 $dbpass = '';
+$dbname = 'lms';
 $port = 3307;
 
-// Connect to mysql 
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass, '', $port);
-
-if(!$conn){
-    echo 'Can not connect: ' . mysqli_connect_error();
-} else {
-    echo 'successful connect';  
+// Connect to MySQL using mysqli (OO style)
+$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname, $port);
+if ($conn->connect_error) {
+    // Stop execution and show connection error
+    die('Connection failed: ' . $conn->connect_error);
 }
 
-/*
-// LMS Database Create
-$sql = 'CREATE DATABASE LMS';
-$create = mysqli_query($conn, $sql);  
+// Only handle form submission on POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Collect and basic-validate input
+    $username = isset($_POST['username']) ? trim($_POST['username']) : '';
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+    $confirm_password = isset($_POST['confirm-password']) ? $_POST['confirm-password'] : '';
 
-if(!$create){  
-    echo 'Cannot create database: ' . mysqli_error($conn);  
-} else {
-    echo 'Create successful database';  
-}
-*/
-
-$retval = mysqli_select_db($conn, 'LMS');
-
-if(!$retval){
-    die('could not select database: ' . mysqli_error($conn)); // Fixed error here
-} else {
-    echo "Database LMS selected successfully ";
-}
-    
-/*    
-// Create student table 
-$student = "CREATE TABLE IF NOT EXISTS student (
-               stuid INT AUTO_INCREMENT PRIMARY KEY, 
-               stuname VARCHAR(100),
-               email VARCHAR(100),
-               password CHAR(8)
-               )";
-    
-if(mysqli_query($conn, $student)){
-    echo " student table created successfully.";
-} else {
-    echo " Error creating table" . mysqli_error($conn);
-}*/
-  
-
-// Check if form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    // Get form data
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm-password'];
-    
-    // Check if passwords match
-    if($password !== $confirm_password) {
-        echo " Error: Passwords do not match!";
-        echo "<br><a href='sign.html'>Go Back</a>";
-        exit();
+    if ($username === '' || $email === '' || $password === '' || $confirm_password === '') {
+        die('Error: All fields are required. <a href="sign.html">Go back</a>');
     }
 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die('Error: Invalid email address. <a href="sign.html">Go back</a>');
+    }
 
-// Data insert student table
-$data = "INSERT INTO student 
-         VALUES
-        (1, 'W.P.Kamal Perera', 'kamalperera123@gmail.com', 'kamal123')"; // Fixed typo in INSERT
-        
-if($conn->query($data) === TRUE){
-    echo " Successfully insert data";
-} else {
-    echo " Error data: " . $conn->error . "<br/>";
+    if ($password !== $confirm_password) {
+        die('Error: Passwords do not match. <a href="sign.html">Go back</a>');
+    }
+
+    if (strlen($password) < 6) {
+        die('Error: Password must be at least 6 characters. <a href="sign.html">Go back</a>');
+    }
+
+    // Hash the password before storing
+    $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+
+    
+    $sql = "INSERT INTO student (stuname, email, password) VALUES (?, ?, ?)";
+
+    $stmt = $conn->prepare($sql);
+    if ($stmt === false) {
+        // Prepare failed and show error 
+        die('Prepare failed: ' . $conn->error);
+    }
+
+    // Bind parameters and execute
+    $stmt->bind_param('sss', $username, $email, $password_hashed);
+    if ($stmt->execute()) {
+          
+    // Store user info in session
+    $_SESSION['username'] = $username;
+    $_SESSION['email'] = $email;
+    
+    // Redirect to dashboard
+    header('Location: Dashboard.php');
+    exit();
+
+    } else {
+        // Execution failed
+        echo 'Execute failed: ' . $stmt->error;
+    }
+
+    $stmt->close();
 }
- 
-?>
+
+$conn->close();
