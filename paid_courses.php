@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -143,7 +149,7 @@
                     <br>
                     all while gaining a deep understanding of the underlying principles of AI.
                 </p>
-                <button id="enrollBtn" onclick="location.href='./paymentPage.html'">
+                <button id="enrollBtn" onclick="location.href='./paymentPage.php'">
                     <div id="btnMainText">Enroll for: $19.99</div>
                     <div id="btnSubText">Discount: 10%</div>
                 </button>
@@ -153,6 +159,8 @@
                 </video>
 
             </div>
+
+        
 
             <!-- ratings -->
             <div id="ratings">
@@ -315,3 +323,8 @@
 </body>
 
 </html>
+
+<?php
+  $_SESSION['coursename']=' AI Mastery: From Beginner to Expert in ChatGPT and Midjourney';
+ $_SESSION['Courseprice']=19.99;
+?>

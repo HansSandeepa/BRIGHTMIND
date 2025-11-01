@@ -41,6 +41,7 @@
     <!-- import javascript files here -->
     <script src="./js/navbar.js"></script>
     <script src="./js/getYear.js"></script>
+    <script src="./js/PaymentPage.js"></script>
 
 </body>
 
