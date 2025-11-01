@@ -1,5 +1,19 @@
 <?php
-include('dbConn.php');
+$server = 'localhost';
+$username = 'root';
+$password = '1234';  
+$database = 'brightmindDb';
+$port = 3307;
+$conn = mysqli_connect($server,$username,$password,$database,$port);
+
+if(!$conn){
+    die('Connection failed:' . mysqli_connect_error());
+} else {
+    echo 'Connected successfully<br />';
+}
+
+// Create database if it doesn't exist
+$createDb = "CREATE DATABASE IF NOT EXISTS brightmindDb";
 
 // Use a different connection without specifying database for creating DB
 $conn_temp = mysqli_connect($server, $username, $password, '', $port);

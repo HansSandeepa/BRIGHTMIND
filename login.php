@@ -1,14 +1,13 @@
 <?php
 session_start();
 
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$dbname = 'lms';
-$port = 3307;
+$server = 'localhost';
+$username = 'root';
+$password = '';  
+$port = 3307;   
 
-// Connect to MySQL
-$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname, $port);
+
+$conn = mysqli_connect($server, $username, $password,'', $port);
 if ($conn->connect_error) {
     die('Connection failed: ' . $conn->connect_error);
 }
