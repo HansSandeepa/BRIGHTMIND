@@ -1,0 +1,241 @@
+<?php
+require_once 'dbconn.php';
+
+$success_message = '';
+$error_message = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $position = mysqli_real_escape_string($conn, $_POST['position']);
+    $subjects = mysqli_real_escape_string($conn, $_POST['subjects']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $bio = mysqli_real_escape_string($conn, $_POST['bio']);
+    $office_hours = mysqli_real_escape_string($conn, $_POST['office_hours']);
+    $department = mysqli_real_escape_string($conn, $_POST['department']);
+    
+    // Handle image upload
+    $image_path = './assets/Apurwa kmim /default-instructor.jpg';
+    
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
+        $filename = $_FILES['image']['name'];
+        $filetype = pathinfo($filename, PATHINFO_EXTENSION);
+        
+        if (in_array(strtolower($filetype), $allowed)) {
+            $new_filename = 'instructor_' . time() . '.' . $filetype;
+            $upload_path = './assets/instructors/' . $new_filename;
+            
+            // Create directory if it doesn't exist
+            if (!file_exists('./assets/instructors/')) {
+                mkdir('./assets/instructors/', 0777, true);
+            }
+            
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $upload_path)) {
+                $image_path = $upload_path;
+            }
+        }
+    }
+    
+    $sql = "INSERT INTO instructors (name, position, subjects, email, bio, office_hours, department, image_path) 
+            VALUES ('$name', '$position', '$subjects', '$email', '$bio', '$office_hours', '$department', '$image_path')";
+    
+    if (mysqli_query($conn, $sql)) {
+        $success_message = "Instructor added successfully!";
+        header("refresh:2;url=instructor-page.php");
+    } else {
+        $error_message = "Error: " . mysqli_error($conn);
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Instructor - Bright Mind</title>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/add-instructor.css">
+</head>
+
+<body>
+    <!-- side navigation bar -->
+    <div class="sidebar">
+        <div class="sidebarHeader">
+            <div class="logo" id="sideLogo">
+                <img src="./assets/lightbulb 1.png" alt="Logo" id="sideLogoImg" class="logoImg">
+                <p class="logoText" id="sidebarLogoText">Bright Mind</p>
+            </div>
+            <button id="closeBtn" class="closeBtn">
+                <img src="./assets/close.svg" alt="closebtn">
+            </button>
+        </div>
+
+        <div class="sidebarContent">
+            <div class="topContent">
+                <ul class="sideBarLists">
+                    <li class="sideBarList">
+                        <a href="./index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="sideBarList">
+                        <a href="./courses.html" class="nav-link">Courses</a>
+                    </li>
+                    <li class="sideBarList" id="selectedNavItem">
+                        <a href="./instructor-page.php" class="nav-link">Instructors</a>
+                    </li>
+                    <li class="sideBarList">
+                        <a href="./about.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="sideBarList">
+                        <a href="./contactUs.html" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottomContent">
+                <ul class="sideBarLists">
+                    <li class="sideBarList">
+                        <a href="./login.html" class="nav-link">Log In</a>
+                    </li>
+                    <li class="sideBarList">
+                        <a href="./sign.html" class="nav-link">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; <span class="year"></span> Bright Mind.
+        </div>
+    </div>
+
+    <!-- overlay -->
+    <section id="overlay"></section>
+
+    <!-- HEADER -->
+    <header>
+        <button id="navbarBtn">
+            <img src="./assets/navbar button.png" alt="navbtn">
+        </button>
+        <div class="logo" id="topLogo">
+            <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
+            <p class="logoText">Bright Mind</p>
+        </div>
+        <div id="loginBtnSection">
+            <a href="./login.html">Log In</a>
+            <a href="./sign.html">Sign In</a>
+        </div>
+    </header>
+    <div id="headerWrapper"></div>
+
+    <!-- Form Content -->
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Add New Instructor</h1>
+            <a href="instructor-page.php" class="back-btn">← Back to Instructors</a>
+        </div>
+
+        <?php if ($success_message): ?>
+            <div class="alert alert-success"><?php echo $success_message; ?></div>
+        <?php endif; ?>
+
+        <?php if ($error_message): ?>
+            <div class="alert alert-error"><?php echo $error_message; ?></div>
+        <?php endif; ?>
+
+        <form method="POST" action="" enctype="multipart/form-data" class="instructor-form">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="e.g., Professor John Doe">
+            </div>
+
+            <div class="form-group">
+                <label for="position">Position *</label>
+                <input type="text" id="position" name="position" required placeholder="e.g., Head of Computer Science Department">
+            </div>
+
+            <div class="form-group">
+                <label for="subjects">Subjects (comma separated) *</label>
+                <textarea id="subjects" name="subjects" required rows="3" placeholder="e.g., Web Development, Python Programming, Database Management"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="e.g., instructor@brightmind.com">
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department *</label>
+                <input type="text" id="department" name="department" required placeholder="e.g., Computer Science">
+            </div>
+
+            <div class="form-group">
+                <label for="office_hours">Office Hours *</label>
+                <textarea id="office_hours" name="office_hours" required rows="2" placeholder="e.g., Monday/Wednesday - 10 AM - 12 PM"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Bio/Description *</label>
+                <textarea id="bio" name="bio" required rows="4" placeholder="Brief description about the instructor..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Profile Image</label>
+                <input type="file" id="image" name="image" accept="image/*">
+                <small>Accepted formats: JPG, JPEG, PNG, GIF (Max 5MB)</small>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Add Instructor</button>
+                <a href="instructor-page.php" class="cancel-btn">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div id="footerWrapper">
+            <div id="footerNavigation">
+                <h2 class="footerTitles">Navigation</h2>
+                <div class="footerNavigationLinks" id="startLinks">
+                    <a href="./index.html">Home</a>
+                    <a href="./courses.html">Courses</a>
+                    <a href="./instructor-page.php">Instructors</a>
+                </div>
+                <div class="footerNavigationLinks" id="endLinks">
+                    <a href="./Dashboard.html">Student Profile</a>
+                    <a href="./about.html">About Us</a>
+                    <a href="./contactUs.html">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="logo" id="bottomLogo">
+                <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
+                <p class="logoText">Bright Mind</p>
+            </div>
+
+            <div id="socialMediaLinksSegment">
+                <h2 class="footerTitles">Follow Us</h2>
+                <div id="socialMediaLinks">
+                    <a href="https://www.facebook.com/"><img src="./assets/facebook.svg" alt="Facebook"></a>
+                    <a href="https://www.linkedin.com/"><img src="./assets/linkedin.svg" alt="LinkedIn"></a>
+                    <a href="https://github.com/HansSandeepa/BRIGHTMIND"><img src="./assets/github.svg" alt="Github"></a>
+                    <a href="https://www.instagram.com/"><img src="./assets/instagram.svg" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; <span class="year"></span> Bright Mind.
+        </div>
+    </footer>
+
+    <script src="./js/navbar.js"></script>
+    <script src="./js/getYear.js"></script>
+</body>
+
+</html>
+<?php mysqli_close($conn); ?>
