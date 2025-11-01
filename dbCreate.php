@@ -15,7 +15,7 @@ if (mysqli_query($conn, $createDb)) {
     
     include_once './mysql/Instructor.php';    //create lecture table (apurwa)
     
-    header("Location: index.html");
+    header("Location: index.php");
 } else {
     echo "Error occured while creating database: " . mysqli_error($conn);
 }
