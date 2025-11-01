@@ -38,7 +38,7 @@
                 <ul class="sideBarLists">
 
                     <li class="sideBarList">
-                        <a href="./index.html" class="nav-link">
+                        <a href="./index.php" class="nav-link">
                             Home
                         </a>
                     </li>
