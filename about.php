@@ -1,125 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About page</title>
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link href="./css/about.css" rel="stylesheet">
-    <link href="./css/main.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-    <!-- side navgation bar -->
-    <div class="sidebar">
-
-        <!-- side bar logo and close button -->
-        <div class="sidebarHeader">
-
-            <div class="logo" id="sideLogo">
-                <img src="./assets/lightbulb 1.png" alt="Logo" id="sideLogoImg" class="logoImg">
-                <p class="logoText" id="sidebarLogoText">Bright Mind</p>
-            </div>
-
-            <button id="closeBtn" class="closeBtn">
-                <img src="./assets/close.svg" alt="closebtn">
-            </button>
-
-        </div>
-
-        <!-- sidebar content -->
-        <div class="sidebarContent">
-            <div class="topContent">
-                <ul class="sideBarLists">
-
-                    <li class="sideBarList">
-                        <a href="./index.html" class="nav-link">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./courses.html" class="nav-link">
-                            Courses
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./Instructor page.html" class="nav-link">
-                            Instructors
-                        </a>
-                    </li>
-
-                    <li class="sideBarList"  id="selectedNavItem">
-                        <a href="./about.html" class="nav-link">
-                            About Us
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./contactUs.html" class="nav-link">
-                            Contact Us
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="bottomContent">
-                <ul class="sideBarLists">
-
-                    <li class="sideBarList">
-                        <a href="./login.html" class="nav-link">
-                            Log In
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./sign.html" class="nav-link">
-                            Sign In
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-        <div class="copyright">
-            &copy; <span class="year"></span> Bright Mind.
-        </div>
-
-    </div>
-
-    <!-- overlay that emerges with the navbar -->
-    <section id="overlay">
-        <!-- do not delete this -->
-    </section>
-
-
-    <!-- HEADER SECTION -->
-    <header>
-        <button id="navbarBtn">
-            <img src="./assets/navbar button.png" alt="navbtn">
-        </button>
-
-        <div class="logo" id="topLogo">
-            <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
-            <p class="logoText">Bright Mind</p>
-        </div>
-
-        <div id="loginBtnSection">
-            <a href="./login.html">Log In</a>
-            <a href="./sign.html">Sign In</a>
-        </div>
-    </header>
-    <div id="headerWrapper">
-        <!-- do not delete this element -->
-    </div>
-
+<?php
+    require_once './headerFooter/header.php';
+?>
 
     <!-- full content -->
     <div class="fullContent">
@@ -195,50 +76,31 @@
         </div>
 
     </div>
-    <!-- FOOTER SECTION  -->
-    <footer>
 
-        <div id="footerWrapper">
-            <div id="footerNavigation">
-                <h2 class="footerTitles">Navigation</h2>
-                <div class="footerNavigationLinks" id="startLinks">
-                    <a href="./index.html">Home</a>
-                    <a href="./courses.html">Courses</a>
-                    <a href="./Instructor page.html">Instructors</a>
-                </div>
-                <div class="footerNavigationLinks" id="endLinks">
-                    <a href="./Dashboard.html">Student Profile</a>
-                    <a href="./about.html">About Us</a>
-                    <a href="./contactUs.html">Contact Us</a>
-                </div>
-            </div>
+    <!--Feedback Form-->
+   
 
-            <div class="logo" id="bottomLogo">
-                <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
-                <p class="logoText">Bright Mind</p>
-            </div>
+    <div class="container">
+        
+        <h2 class="ftopic">Feedback Form</h2>
 
-            <div id="socialMediaLinksSegment">
-                <h2 class="footerTitles">Follow Us</h2>
-                <div id="socialMediaLinks">
-                    <a href="https://www.facebook.com/"><img src="./assets/facebook.svg" alt="Facebook"></a>
-                    <a href="https://www.linkedin.com/"><img src="./assets/linkedin.svg" alt="LinkedIn"></a>
-                    <a href="https://github.com/HansSandeepa/BRIGHTMIND"><img src="./assets/github.svg" alt="Github"></a>
-                    <a href="https://www.instagram.com/"><img src="./assets/instagram.svg" alt="Instagram"></a>
-                </div>
-            </div>
-        </div>
+        <form method="POST" action="feedback.php" >
+            <label>Name</label>
+            <input type="text" name="name" required>
 
-        <div class="copyright">
-            &copy; <span class="year"></span> Bright Mind.
-        </div>
+            <label>Email</label>
+            <input type="email" name="email" required>
 
-    </footer>
+            <label>Message</label>
+            <textarea name="message" rows="3" required></textarea>
 
-    <!-- import javascript files here -->
-    <script src="./js/navbar.js"></script>
-    <script src="./js/getYear.js"></script>
+            <label>Rating (1-5)</label>
+            <input type="number" name="rating" min="1" max="5" required>
 
-</body>
+            <button type="submit" name="submit" class="tbutton">Submit Feedback</button>
+        </form>
 
-</html>
+        <a href="feedback_view.php" class="btn-secondary">View All Feedback</a>
+    </div>
+
+    <?php require_once './headerFooter/footer.php'; ?>

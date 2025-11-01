@@ -1,7 +1,7 @@
 <?php
 $server = 'localhost';
 $username = 'root';
-$password = '';     //තමන්ගෙ database එකේ password එක දාන්න
+$password = '';     
 
 $conn = mysqli_connect($server, $username, $password);
 
@@ -13,9 +13,9 @@ $createDb = "CREATE DATABASE IF NOT EXISTS brightmindDb";
 
 if (mysqli_query($conn, $createDb)) {
     
-    include_once './mysql/Instructor.php';    //create lecture table (apurwa)
+    include_once './mysql/Instructor.php';    
     
-    header("Location: index.html");
+    header("Location: index.php");
 } else {
     echo "Error occured while creating database: " . mysqli_error($conn);
 }
