@@ -45,8 +45,9 @@ require_once './headerFooter/header.php';
     </thead>
     <tbody>
       <?php
-      $result = $conn->query("SELECT * FROM feedback ORDER BY id DESC");
-      while ($row = $result->fetch_assoc()) {
+      $data="SELECT * FROM feedback ORDER BY id DESC";
+      $result = mysqli_query($conn,$data);
+      while ($row = mysqli_fetch_assoc($result)) {
           echo "<tr>
             <form method='POST'>
               <td>{$row['id']}<input type='hidden' name='id' value='{$row['id']}'></td>
