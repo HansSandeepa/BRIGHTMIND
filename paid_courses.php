@@ -1,5 +1,23 @@
 <?php
-session_start();
+require_once './headerFooter/header.php';
+?>
+
+<script>
+    // Add page-specific CSS after header loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const css1 = document.createElement('link');
+        css1.rel = 'stylesheet';
+        css1.href = './css/individual_courses.css';
+        document.head.appendChild(css1);
+
+        const css2 = document.createElement('link');
+        css2.rel = 'stylesheet';
+        css2.href = './css/paid_courses.css';
+        document.head.appendChild(css2);
+    });
+</script>
+
+<?php
 $courseId = isset($_GET['id']) ? (int)$_GET['id'] : null;
 
 if ($courseId) {
@@ -17,327 +35,154 @@ if ($courseId) {
     if ($course) {
         $_SESSION['coursename'] = $course['courseName'] ?? '';
         $_SESSION['Courseprice'] = isset($course['price']) ? (float)$course['price'] : 0.0;
+        $description = $course['description'] ?? '';
+
         // you can also render $course data into the page as needed
     }
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<!-- CONTECT SECTION -->
+<section>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bright Mind</title>
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/individual_courses.css">
-    <link rel="stylesheet" href="./css/paid_courses.css">
-</head>
-
-
-<body>
-    <!-- side navgation bar -->
-    <div class="sidebar">
-
-        <!-- side bar logo and close button -->
-        <div class="sidebarHeader">
-
-            <div class="logo" id="sideLogo">
-                <img src="./assets/lightbulb 1.png" alt="Logo" id="sideLogoImg" class="logoImg">
-                <p class="logoText" id="sidebarLogoText">Bright Mind</p>
-            </div>
-
-            <button id="closeBtn" class="closeBtn">
-                <img src="./assets/close.svg" alt="closebtn">
+    <!-- title container -->
+    <div id="title_container">
+        <div id="paidTitle">
+            <h1 id="courseTitle">
+                <?php echo htmlspecialchars($_SESSION['coursename']); ?>
+                <br>
+                From Beginner to Expert in ChatGPT and Midjourney
+            </h1>
+            <p id="courseDescription">
+                <?php echo $description; ?>
+            </p>
+            <button id="enrollBtn" onclick="location.href='./paymentPage.php'">
+                <div id="btnMainText">Enroll for: <?php echo htmlspecialchars($_SESSION['Courseprice']); ?></div>
+                <div id="btnSubText">Discount: 10%</div>
             </button>
 
+            <video autoplay muted loop id="video">
+                <source src="./assets/individual_courses/video.mp4" type="video/mp4">
+            </video>
+
         </div>
 
-        <!-- sidebar content -->
-        <div class="sidebarContent">
-            <div class="topContent">
-                <ul class="sideBarLists">
 
-                    <li class="sideBarList">
-                        <a href="./index.html" class="nav-link">
-                            Home
-                        </a>
-                    </li>
 
-                    <li class="sideBarList" id="selectedNavItem">
-                        <a href="./courses.html" class="nav-link">
-                            Courses
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./Instructor page.html" class="nav-link">
-                            Instructors
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./about.html" class="nav-link">
-                            About Us
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./contactUs.html" class="nav-link">
-                            Contact Us
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="bottomContent">
-                <ul class="sideBarLists">
-
-                    <li class="sideBarList">
-                        <a href="./login.html" class="nav-link">
-                            Log In
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./sign.html" class="nav-link">
-                            Sign In
-                        </a>
-                    </li>
-
-                </ul>
-
+        <!-- ratings -->
+        <div id="ratings">
+            <div>
+                <h3 class="ratings_title">2 Course Series</h3>
+                <span class="ratings_subtext">Earn a career credential that demonstrates your expertis</span>
             </div>
 
-        </div>
+            <div>
+                <h3 class="ratings_title">4.5 <img src="./assets/individual_courses/star-7207.svg" alt="star"
+                        id="ratings_star"></h3>
+                <span class="ratings_subtext">Earn a career credential that demonstrates your expertis</span>
+            </div>
 
-        <div class="copyright">
-            &copy; <span class="year"></span> Bright Mind.
-        </div>
+            <div>
+                <h3 class="ratings_title">1 Month</h3>
+                <span class="ratings_subtext">at 7 hours per week.</span>
+            </div>
 
+            <div>
+                <h3 class="ratings_title">Flexible Scedule</h3>
+                <span class="ratings_subtext">Learn at anywhere you want.</span>
+            </div>
+        </div>
     </div>
 
-    <!-- overlay that emerges with the navbar -->
-    <section id="overlay">
-        <!-- do not delete this -->
-    </section>
 
+    <!-- COURSE DETAILS SECTION -->
+    <!-- course content -->
+    <div id="course_content" class="course_details">
+        <h2 id="course_content_title">Course Content</h2>
+        <table id="course_content_table">
+            <tr>
+                <th>Module</th>
+                <th>Topics</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>Module 1</td>
+                <td>Introduction to AI and ChatGPT</td>
+                <td>2 hours</td>
+            </tr>
+            <tr>
+                <td>Module 2</td>
+                <td>Understanding Midjourney</td>
+                <td>3 hours</td>
+            </tr>
+            <tr>
+                <td>Module 3</td>
+                <td>Advanced ChatGPT Techniques</td>
+                <td>4 hours</td>
+            </tr>
+            <tr>
+                <td>Module 4</td>
+                <td>Creating Stunning Images with Midjourney</td>
+                <td>5 hours</td>
+            </tr>
+            <tr>
+                <td>Module 5</td>
+                <td>Real-World Applications of AI</td>
+                <td>6 hours</td>
+            </tr>
+            <tr>
+                <td>Module 6</td>
+                <td>Final Project and Certification</td>
+                <td>8 hours</td>
+            </tr>
 
-    <!-- HEADER SECTION -->
-    <header>
-        <button id="navbarBtn">
-            <img src="./assets/navbar button.png" alt="navbtn">
-        </button>
-
-        <div class="logo" id="topLogo">
-            <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
-            <p class="logoText">Bright Mind</p>
-        </div>
-
-        <div id="loginBtnSection">
-            <a href="./login.html">Log In</a>
-            <a href="./sign.html">Sign In</a>
-        </div>
-    </header>
-    <div id="headerWrapper">
-        <!-- do not delete this element -->
+        </table>
+    </div>
     </div>
 
-    <!-- CONTECT SECTION -->
-    <section>
+    <!-- requirements -->
+    <div id="requirements" class="course_details">
+        <h2 id="requirements_title">Requirements</h2>
+        <ul id="requirements_list">
+            <li>Basic computer skills</li>
+            <li>Willingness to learn</li>
+            <li>No prior knowledge of AI is required</li>
+        </ul>
+    </div>
 
-        <!-- title container -->
-        <div id="title_container">
-            <div id="paidTitle">
-                <h1 id="courseTitle">
-                    AI Mastery:
-                    <br>
-                    From Beginner to Expert in ChatGPT and Midjourney
-                </h1>
-                <p id="courseDescription">
-                    This course is designed to take you from a complete beginner to an expert in AI, focusing on
-                    <br>
-                    two of the most powerful tools available today: ChatGPT and Midjourney.
-                    <br>
-                    You will learn how to leverage these tools to create stunning images and generate human-like text,
-                    <br>
-                    all while gaining a deep understanding of the underlying principles of AI.
-                </p>
-                <button id="enrollBtn" onclick="location.href='./paymentPage.php'">
-                    <div id="btnMainText">Enroll for: $19.99</div>
-                    <div id="btnSubText">Discount: 10%</div>
-                </button>
+    <!-- description -->
+    <div id="description" class="course_details">
+        <h2 id="description_title">Description</h2>
+        <p id="description_text" class="text_content">
+            This course is designed to take you from a complete beginner to an expert in AI, focusing on two of the
+            <br>
+            most powerful tools available today: ChatGPT and Midjourney.
+            <br><br>
+            You will learn how to leverage these tools to create stunning images and generate human-like text, <br>
+            all while gaining a deep understanding of the <br>
+            underlying principles of AI.
+            <br><br>
+            By the end of this course, you will have the skills and knowledge to use AI in your own projects and
+            <br>
+            applications, and you will be well on your way to becoming an AI expert.
+        </p>
+    </div>
 
-                <video autoplay muted loop id="video">
-                    <source src="./assets/individual_courses/video.mp4" type="video/mp4">
-                </video>
-
-            </div>
-
-
-
-            <!-- ratings -->
-            <div id="ratings">
-                <div>
-                    <h3 class="ratings_title">2 Course Series</h3>
-                    <span class="ratings_subtext">Earn a career credential that demonstrates your expertis</span>
-                </div>
-
-                <div>
-                    <h3 class="ratings_title">4.5 <img src="./assets/individual_courses/star-7207.svg" alt="star"
-                            id="ratings_star"></h3>
-                    <span class="ratings_subtext">Earn a career credential that demonstrates your expertis</span>
-                </div>
-
-                <div>
-                    <h3 class="ratings_title">1 Month</h3>
-                    <span class="ratings_subtext">at 7 hours per week.</span>
-                </div>
-
-                <div>
-                    <h3 class="ratings_title">Flexible Scedule</h3>
-                    <span class="ratings_subtext">Learn at anywhere you want.</span>
-                </div>
-            </div>
-        </div>
+    <!-- who is this course for -->
+    <div id="who_is_this_course_for" class="course_details">
+        <h2 id="who_is_this_course_for_title">Who is this course for?</h2>
+        <p id="who_is_this_course_for_text" class="text_content">
+            This course is designed for anyone who wants to learn about AI and how to use it in their own projects.
+            <br>
+            Whether you are a complete beginner or have some experience with AI, this course will provide you with
+            the <br>
+            knowledge and skills you need to succeed.
+        </p>
+    </div>
+</section>
 
 
-        <!-- COURSE DETAILS SECTION -->
-        <!-- course content -->
-        <div id="course_content" class="course_details">
-            <h2 id="course_content_title">Course Content</h2>
-            <table id="course_content_table">
-                <tr>
-                    <th>Module</th>
-                    <th>Topics</th>
-                    <th>Duration</th>
-                </tr>
-                <tr>
-                    <td>Module 1</td>
-                    <td>Introduction to AI and ChatGPT</td>
-                    <td>2 hours</td>
-                </tr>
-                <tr>
-                    <td>Module 2</td>
-                    <td>Understanding Midjourney</td>
-                    <td>3 hours</td>
-                </tr>
-                <tr>
-                    <td>Module 3</td>
-                    <td>Advanced ChatGPT Techniques</td>
-                    <td>4 hours</td>
-                </tr>
-                <tr>
-                    <td>Module 4</td>
-                    <td>Creating Stunning Images with Midjourney</td>
-                    <td>5 hours</td>
-                </tr>
-                <tr>
-                    <td>Module 5</td>
-                    <td>Real-World Applications of AI</td>
-                    <td>6 hours</td>
-                </tr>
-                <tr>
-                    <td>Module 6</td>
-                    <td>Final Project and Certification</td>
-                    <td>8 hours</td>
-                </tr>
-
-            </table>
-        </div>
-        </div>
-
-        <!-- requirements -->
-        <div id="requirements" class="course_details">
-            <h2 id="requirements_title">Requirements</h2>
-            <ul id="requirements_list">
-                <li>Basic computer skills</li>
-                <li>Willingness to learn</li>
-                <li>No prior knowledge of AI is required</li>
-            </ul>
-        </div>
-
-        <!-- description -->
-        <div id="description" class="course_details">
-            <h2 id="description_title">Description</h2>
-            <p id="description_text" class="text_content">
-                This course is designed to take you from a complete beginner to an expert in AI, focusing on two of the
-                <br>
-                most powerful tools available today: ChatGPT and Midjourney.
-                <br><br>
-                You will learn how to leverage these tools to create stunning images and generate human-like text, <br>
-                all while gaining a deep understanding of the <br>
-                underlying principles of AI.
-                <br><br>
-                By the end of this course, you will have the skills and knowledge to use AI in your own projects and
-                <br>
-                applications, and you will be well on your way to becoming an AI expert.
-            </p>
-        </div>
-
-        <!-- who is this course for -->
-        <div id="who_is_this_course_for" class="course_details">
-            <h2 id="who_is_this_course_for_title">Who is this course for?</h2>
-            <p id="who_is_this_course_for_text" class="text_content">
-                This course is designed for anyone who wants to learn about AI and how to use it in their own projects.
-                <br>
-                Whether you are a complete beginner or have some experience with AI, this course will provide you with
-                the <br>
-                knowledge and skills you need to succeed.
-            </p>
-        </div>
-    </section>
-
-
-
-    <!-- FOOTER SECTION -->
-    <footer>
-
-        <div id="footerWrapper">
-            <div id="footerNavigation">
-                <h2 class="footerTitles">Navigation</h2>
-                <div class="footerNavigationLinks" id="startLinks">
-                    <a href="./index.html">Home</a>
-                    <a href="./courses.html">Courses</a>
-                    <a href="./Instructor page.html">Instructors</a>
-                </div>
-                <div class="footerNavigationLinks" id="endLinks">
-                    <a href="./Dashboard.html">Student Profile</a>
-                    <a href="./about.html">About Us</a>
-                    <a href="./contactUs.html">Contact Us</a>
-                </div>
-            </div>
-
-            <div class="logo" id="bottomLogo">
-                <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
-                <p class="logoText">Bright Mind</p>
-            </div>
-
-            <div id="socialMediaLinksSegment">
-                <h2 class="footerTitles">Follow Us</h2>
-                <div id="socialMediaLinks">
-                    <a href="https://www.facebook.com/"><img src="./assets/facebook.svg" alt="Facebook"></a>
-                    <a href="https://www.linkedin.com/"><img src="./assets/linkedin.svg" alt="LinkedIn"></a>
-                    <a href="https://github.com/HansSandeepa/BRIGHTMIND"><img src="./assets/github.svg" alt="Github"></a>
-                    <a href="https://www.instagram.com/"><img src="./assets/instagram.svg" alt="Instagram"></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="copyright">
-            &copy; <span class="year"></span> Bright Mind.
-        </div>
-
-    </footer>
-
-    <!-- import javascript files here -->
-    <script src="./js/navbar.js"></script>
-    <script src="./js/getYear.js"></script>
-
-</body>
-
-</html>
+<!-- FOOTER SECTION -->
+<?php
+require_once './headerFooter/footer.php'
+?>
