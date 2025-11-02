@@ -1,4 +1,5 @@
 function func(e){
+  
   e.preventDefault(); // Prevent form submission
     var user=document.getElementById('username').value;
     var pass=document.getElementById('password').value;

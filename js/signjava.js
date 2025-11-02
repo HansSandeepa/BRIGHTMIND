@@ -2,13 +2,12 @@
 function validateForm(e) {
     e.preventDefault(); // Prevent the default form submission behavior
 
+    var form = e.target;
     var username = document.getElementById('username').value.trim();
     var email = document.getElementById('email').value.trim();
     var password = document.getElementById('password').value;
     var confirm = document.getElementById('confirm-password').value;
-    var terms = document.getElementById('checkbox').checked;
-
-    if (!username || !email || !password || !confirm) {
+      if (!username || !email || !password || !confirm) {
         alert("All fields are required.");
         return false;
     }
@@ -29,13 +28,9 @@ function validateForm(e) {
         return false;
     }
 
-    if (!terms) {
-        alert("You must agree to the Terms and Conditions.");
-        return false;
-    }
+    // If validation passes, submit the form
+    form.submit();
+    return false; // Return false to prevent double submission
 
-    alert("Form submitted successfully!");
-    window.location.href = "Dashboard.html"; // Redirect to the DASHBOARD page after successful submission
-    return true;
 }
 

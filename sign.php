@@ -1,126 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bright Mind</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/sign.css">
-</head>
-
-<body>
-    <!-- side navgation bar -->
-    <div class="sidebar">
-
-        <!-- side bar logo and close button -->
-        <div class="sidebarHeader">
-
-            <div class="logo" id="sideLogo">
-                <img src="./assets/lightbulb 1.png" alt="Logo" id="sideLogoImg" class="logoImg">
-                <p class="logoText" id="sidebarLogoText">Bright Mind</p>
-            </div>
-
-            <button id="closeBtn" class="closeBtn">
-                <img src="./assets/close.svg" alt="closebtn">
-            </button>
-
-        </div>
-
-        <!-- sidebar content -->
-        <div class="sidebarContent">
-            <div class="topContent">
-                <ul class="sideBarLists">
-
-                    <li class="sideBarList">
-                        <a href="./index.html" class="nav-link">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./courses.html" class="nav-link">
-                            Courses
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./Instructor page.html" class="nav-link">
-                            Instructors
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./about.html" class="nav-link">
-                            About Us
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./contactUs.html" class="nav-link">
-                            Contact Us
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="bottomContent">
-                <ul class="sideBarLists">
-
-                    <li class="sideBarList">
-                        <a href="./login.html" class="nav-link">
-                            Log In
-                        </a>
-                    </li>
-
-                    <li class="sideBarList" id="selectedNavItem">
-                        <a href="./sign.html" class="nav-link">
-                            Sign In
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-        <div class="copyright">
-            &copy; <span class="year"></span> Bright Mind.
-        </div>
-
-    </div>
-
-    <!-- overlay that emerges with the navbar -->
-    <section id="overlay">
-        <!-- do not delete this -->
-    </section>
-
-
-    <!-- HEADER SECTION -->
-    <header>
-        <button id="navbarBtn">
-            <img src="./assets/navbar button.png" alt="navbtn">
-        </button>
-
-        <div class="logo" id="topLogo">
-            <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
-            <p class="logoText">Bright Mind</p>
-        </div>
-
-        <div id="loginBtnSection">
-            <a href="./login.html">Log In</a>
-            <a href="./sign.html">Sign In</a>
-            <a href="admin.html" class="nav-btn admin-btn" id="adminBtn">Admin Panel</a>
-        </div>
-    </header>
-    <div id="headerWrapper">
-        <!-- do not delete this element -->
-    </div>
-
+<?php require_once './headerFooter/header.php'?>
+<script>
+    // Add page-specific CSS after header loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = './css/sign.css';
+        document.head.appendChild(css);
+    });
+</script>
     <!-- CONTECT SECTION -->
     <section>
         <div id="signImg">
@@ -128,29 +15,27 @@
         </div>
 
         <div id="signForm">
-            <form class="form" onsubmit="validateForm(event)">
-
+            <form class="form" name='signForm' action="./process.php" method="post" onsubmit="return validateForm(event)">
+    
                 <div class="sigin">
                     <h1>SIGN PAGE</h1> <br />
                     <label for="username">User Name:</label><br />
-                    <input type="text" name="username" id="username" required><br /><br />
+                    <input type="text" name="username" id="username" ><br /><br />
 
                     <label for="email">Email:</label><br />
-                    <input type="text" name="email" id="email" required><br /><br />
+                    <input type="text" name="email" id="email" ><br /><br />
 
                     <label for="password">Password:</label><br />
-                    <input type="password" name="password" id="password" required><br /><br />
+                    <input type="password" name="password" id="password" ><br /><br />
 
                     <label for="confirm-password">Conform password:</label><br />
-                    <input type="password" name="confirm-password" id="confirm-password" required><br /><br /><br />
+                    <input type="password" name="confirm-password" id="confirm-password" ><br /><br /><br />
 
-                    <label class="checkbox"><input class="checkbox" type="checkbox" name="checkbox" id="checkbox"
-                            required>I agree to the
-                        <b>TEAM AND CONDITION </b></label>
+              
 
                     <br /><br />
-                    <button type="submit"><label class="sumbit">SUMBIT</label></button>
-
+                    <button type="submit">SUMBIT</button>
+                   
                 </div>
                 <p id="demo"></p>
             </form>
@@ -159,51 +44,4 @@
     </section>
 
     <!-- FOOTER SECTION -->
-    <footer>
-
-        <div id="footerWrapper">
-            <div id="footerNavigation">
-                <h2 class="footerTitles">Navigation</h2>
-                <div class="footerNavigationLinks" id="startLinks">
-                    <a href="./index.html">Home</a>
-                    <a href="./courses.html">Courses</a>
-                    <a href="./Instructor page.html">Instructors</a>
-                </div>
-                <div class="footerNavigationLinks" id="endLinks">
-                    <a href="./Dashboard.html">Student Profile</a>
-                    <a href="./about.html">About Us</a>
-                    <a href="./contactUs.html">Contact Us</a>
-                </div>
-            </div>
-
-            <div class="logo" id="bottomLogo">
-                <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
-                <p class="logoText">Bright Mind</p>
-            </div>
-
-            <div id="socialMediaLinksSegment">
-                <h2 class="footerTitles">Follow Us</h2>
-                <div id="socialMediaLinks">
-                    <a href="https://www.facebook.com/"><img src="./assets/facebook.svg" alt="Facebook"></a>
-                    <a href="https://www.linkedin.com/"><img src="./assets/linkedin.svg" alt="LinkedIn"></a>
-                    <a href="https://github.com/HansSandeepa/BRIGHTMIND"><img src="./assets/github.svg"
-                            alt="Github"></a>
-                    <a href="https://www.instagram.com/"><img src="./assets/instagram.svg" alt="Instagram"></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="copyright">
-            &copy; <span class="year"></span> Bright Mind.
-        </div>
-
-    </footer>
-
-    <!-- import javascript files here -->
-    <script src="./js/navbar.js"></script>
-    <script src="./js/getYear.js"></script>
-    <script src="./js/signjava.js"></script>
-
-</body>
-
-</html>
+<?php require_once './headerFooter/footer.php' ?>
