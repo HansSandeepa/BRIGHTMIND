@@ -1,135 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bright Mind</title>
-        <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./css/main.css">
-        <link rel="stylesheet" href="css/PaymentSuccesPageCSS.css">
-    </head>
-   
-</head>
-
-
-<body>
-    <!-- side navgation bar -->
-    <div class="sidebar">
-
-        <!-- side bar logo and close button -->
-        <div class="sidebarHeader">
-
-            <div class="logo" id="sideLogo">
-                <img src="./assets/lightbulb 1.png" alt="Logo" id="sideLogoImg" class="logoImg">
-                <p class="logoText" id="sidebarLogoText">Bright Mind</p>
-            </div>
-
-            <button id="closeBtn" class="closeBtn">
-                <img src="./assets/close.svg" alt="closebtn">
-            </button>
-
-        </div>
-
-        <!-- sidebar content -->
-        <div class="sidebarContent">
-            <div class="topContent">
-                <ul class="sideBarLists">
-
-                    <li class="sideBarList">
-                        <a href="./index.html" class="nav-link">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./courses.html" class="nav-link">
-                            Courses
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./Instructor page.html" class="nav-link">
-                            Instructors
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./about.html" class="nav-link">
-                            About Us
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./contactUs.html" class="nav-link">
-                            Contact Us
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="bottomContent">
-                <ul class="sideBarLists">
-
-                    <li class="sideBarList">
-                        <a href="./login.html" class="nav-link">
-                            Log In
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./sign.html" class="nav-link">
-                            Sign In
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-        <div class="copyright">
-            &copy; <span class="year"></span> Bright Mind.
-        </div>
-
-    </div>
-
-    <!-- overlay that emerges with the navbar -->
-    <section id="overlay">
-        <!-- do not delete this -->
-    </section>
-
-
-    <!-- HEADER SECTION -->
-    <header>
-        <button id="navbarBtn">
-            <img src="./assets/navbar button.png" alt="navbtn">
-        </button>
-
-        <div class="logo" id="topLogo">
-            <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
-            <p class="logoText">Bright Mind</p>
-        </div>
-
-        <div id="loginBtnSection">
-            <a href="./login.html">Log In</a>
-            <a href="./sign.html">Sign In</a>
-        </div>
-    </header>
-    <div id="headerWrapper">
+include_once("headerFooter/header.php");
+?>
+<script>
+    // Add page-specific CSS after header loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = './css/PaymentSuccesPageCSS.css';
+        document.head.appendChild(css);
+    });
+</script>
         <!-- do not delete this element -->
-    </div>
+
 
     <div  class="wrapper">
-        <img src="assets/PaymentPageAssets/Animation - 1744784399993.gif">
+        <img class="animatinggif" src="assets/PaymentPageAssets/Animation - 1744784399993.gif">
         <h2 class="paysuc">Payment Successful!</h2>
         <p class="paysucp">Your payment has been completed.</p>
-        <button onclick="window.location.href = './index.html'">Finish</button>
+        <button class="finish" onclick="window.location.href = './index.php'">Finish</button>
+        <p style="margin-bottom: 0px;margin-top: 0;">Your data has been <b>saved </b>to our system,Do you want to delete them</p>
+
+
+        <div style="display: grid; grid-template-columns: auto auto; gap: 10px; justify-content: center;margin-top: 0px;">
+         <button class="dataremove" onclick="window.location.href='paymentdelete.php'">Yes</button>
+        <button class="dataremove" onclick="window.location.href = './index.php'" >No</button>
+        </div>
+       
+
     </div>
     
 
@@ -137,48 +35,13 @@
 
 
     <!-- FOOTER SECTION -->
-    <footer>
+    
+<?php
+    include_once("headerFooter/footer.php");
+?>
+    
 
-        <div id="footerWrapper">
-            <div id="footerNavigation">
-                <h2 class="footerTitles">Navigation</h2>
-                <div class="footerNavigationLinks" id="startLinks">
-                    <a href="./index.html">Home</a>
-                    <a href="./courses.html">Courses</a>
-                    <a href="./Instructor page.html">Instructors</a>
-                </div>
-                <div class="footerNavigationLinks" id="endLinks">
-                    <a href="./Dashboard.html">Student Profile</a>
-                    <a href="./about.html">About Us</a>
-                    <a href="./contactUs.html">Contact Us</a>
-                </div>
-            </div>
 
-            <div class="logo" id="bottomLogo">
-                <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
-                <p class="logoText">Bright Mind</p>
-            </div>
-
-            <div id="socialMediaLinksSegment">
-                <h2 class="footerTitles">Follow Us</h2>
-                <div id="socialMediaLinks">
-                    <a href="https://www.facebook.com/"><img src="./assets/facebook.svg" alt="Facebook"></a>
-                    <a href="https://www.linkedin.com/"><img src="./assets/linkedin.svg" alt="LinkedIn"></a>
-                    <a href="https://github.com/HansSandeepa/BRIGHTMIND"><img src="./assets/github.svg" alt="Github"></a>
-                    <a href="https://www.instagram.com/"><img src="./assets/instagram.svg" alt="Instagram"></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="copyright">
-            &copy; <span class="year"></span> Bright Mind.
-        </div>
-
-    </footer>
-
-    <!-- import javascript files here -->
-     <script src="./js/navbar.js"></script>
-     <script src="./js/getYear.js"></script>
 
 </body>
 

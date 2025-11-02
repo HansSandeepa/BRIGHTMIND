@@ -95,7 +95,7 @@ function validateForm(){
     const cvvnumber = cvvCheck();
 
     if(username && cardnumber && expdate && cvvnumber) {
-        document.forms[0].action = "./PaymentSuccesPage.html";
+       //document.forms[0].action = "php/paymentpage.php";
         return true;
     }
         
