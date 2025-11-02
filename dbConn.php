@@ -2,7 +2,7 @@
 
 $server = 'localhost';
 $username = 'root';
-$password = '1234';    //තමන්ගෙ database එකේ password එක දාන්න
+$password = '';    //තමන්ගෙ database එකේ password එක දාන්න
 $database = 'brightmindDb';
 
 $conn = mysqli_connect($server,$username,$password,$database);

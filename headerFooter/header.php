@@ -117,7 +117,7 @@
             <a href="./login.php">Log In</a>
             <a href="./sign.php">Sign In</a>
             <!-- add Admin button near other nav/login buttons -->
-            <a href="admin.php" class="nav-btn admin-btn" id="adminBtn">Admin Panel</a>
+            <a href="adminlogin.php" class="nav-btn admin-btn" id="adminBtn">Admin Panel</a>
         </div>
     </header>
     <div id="headerWrapper">
