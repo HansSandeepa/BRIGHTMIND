@@ -1,7 +1,25 @@
 <?php
-
 session_start();
+$courseId = isset($_GET['id']) ? (int)$_GET['id'] : null;
 
+if ($courseId) {
+    // optional: load course details from DB and set session/variables
+    require_once './dbConn.php';
+    $stmt = mysqli_prepare($conn, "SELECT * FROM course WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, 'i', $courseId);
+    mysqli_stmt_execute($stmt);
+    $res = mysqli_stmt_get_result($stmt);
+    $course = mysqli_fetch_assoc($res);
+    mysqli_free_result($res);
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    if ($course) {
+        $_SESSION['coursename'] = $course['courseName'] ?? '';
+        $_SESSION['Courseprice'] = isset($course['price']) ? (float)$course['price'] : 0.0;
+        // you can also render $course data into the page as needed
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -160,7 +178,7 @@ session_start();
 
             </div>
 
-        
+
 
             <!-- ratings -->
             <div id="ratings">
@@ -323,8 +341,3 @@ session_start();
 </body>
 
 </html>
-
-<?php
-  $_SESSION['coursename']=' AI Mastery: From Beginner to Expert in ChatGPT and Midjourney';
- $_SESSION['Courseprice']=19.99;
-?>

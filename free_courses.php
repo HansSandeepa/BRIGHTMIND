@@ -1,3 +1,13 @@
+<?php
+// if this page needs session or course info:
+session_start();
+$courseId = isset($_GET['id']) ? (int)$_GET['id'] : null;
+if ($courseId) {
+    // optional DB lookup (same pattern as above) or set session for the selected course
+    // require_once './dbConn.php'; ... fetch course row ...
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -264,9 +274,9 @@
         <div id="who_is_this_course_for" class="course_details">
             <h2 id="who_is_this_course_for_title">Who is this course for?</h2>
             <p id="who_is_this_course_for_text" class="text_content">
-                This course is ideal for anyone interested in understanding financial markets and investments. 
+                This course is ideal for anyone interested in understanding financial markets and investments.
                 <br>
-                Whether you're a beginner looking to build a foundation or a professional seeking to enhance your knowledge, 
+                Whether you're a beginner looking to build a foundation or a professional seeking to enhance your knowledge,
                 this course will provide valuable insights and practical skills to navigate the financial world effectively.
             </p>
         </div>
