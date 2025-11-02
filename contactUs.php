@@ -38,31 +38,31 @@
                 <ul class="sideBarLists">
 
                     <li class="sideBarList">
-                        <a href="./index.html" class="nav-link">
+                        <a href="./index.php" class="nav-link">
                             Home
                         </a>
                     </li>
 
                     <li class="sideBarList">
-                        <a href="./courses.html" class="nav-link">
+                        <a href="./courses.php" class="nav-link">
                             Courses
                         </a>
                     </li>
 
                     <li class="sideBarList">
-                        <a href="./Instructor page.html" class="nav-link">
+                        <a href="./Instructor page.php" class="nav-link">
                             Instructors
                         </a>
                     </li>
 
                     <li class="sideBarList">
-                        <a href="./about.html" class="nav-link">
+                        <a href="./about.php" class="nav-link">
                             About Us
                         </a>
                     </li>
 
                     <li class="sideBarList" id="selectedNavItem">
-                        <a href="./contactUs.html" class="nav-link">
+                        <a href="./contactUs.php" class="nav-link">
                             Contact Us
                         </a>
                     </li>
@@ -73,13 +73,13 @@
                 <ul class="sideBarLists">
 
                     <li class="sideBarList">
-                        <a href="./login.html" class="nav-link">
+                        <a href="./login.php" class="nav-link">
                             Log In
                         </a>
                     </li>
 
                     <li class="sideBarList">
-                        <a href="./sign.html" class="nav-link">
+                        <a href="./sign.php" class="nav-link">
                             Sign In
                         </a>
                     </li>
@@ -114,8 +114,8 @@
         </div>
 
         <div id="loginBtnSection">
-            <a href="./login.html">Log In</a>
-            <a href="./sign.html">Sign In</a>
+            <a href="./login.php">Log In</a>
+            <a href="./sign.php">Sign In</a>
         </div>
     </header>
     <div id="headerWrapper">
@@ -135,7 +135,7 @@
                 <path d="M70.865,101.78c0,4.774,3.886,8.657,8.66,8.657c4.774,0,8.657-3.883,8.657-8.657c0-4.773-3.883-8.656-8.657-8.656    C74.751,93.124,70.865,97.006,70.865,101.78z"></path>
               </svg>
             </div>
-            <form action="#" method="post" id="contact_form">
+            <form action="./contactprocess.php" method="post" id="contact_form">
               <div class="name">
                 <label for="name"></label>
                 <input type="text" placeholder="My name is" name="name" id="name_input" required>
@@ -159,10 +159,10 @@
               </div>
               <div class="message">
                 <label for="message"></label>
-                <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
+                <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" name="message" required></textarea>
               </div>
               <div class="submit">
-                <input type="submit" value="Send Message" id="form_button" />
+                <input type="submit" value="Send Message" id="form_button" name="sub"/>
               </div>
             </form><!-- // End form -->
           </div><!-- // End #container -->
@@ -178,14 +178,14 @@
             <div id="footerNavigation">
                 <h2 class="footerTitles">Navigation</h2>
                 <div class="footerNavigationLinks" id="startLinks">
-                    <a href="./index.html">Home</a>
-                    <a href="./courses.html">Courses</a>
-                    <a href="./Instructor page.html">Instructors</a>
+                    <a href="./index.php">Home</a>
+                    <a href="./courses.php">Courses</a>
+                    <a href="./Instructor page.php">Instructors</a>
                 </div>
                 <div class="footerNavigationLinks" id="endLinks">
-                    <a href="./Dashboard.html">Student Profile</a>
-                    <a href="./about.html">About Us</a>
-                    <a href="./contactUs.html">Contact Us</a>
+                    <a href="./Dashboard.php">Student Profile</a>
+                    <a href="./about.php">About Us</a>
+                    <a href="./contactUs.php">Contact Us</a>
                 </div>
             </div>
 

@@ -9,7 +9,7 @@
 
         <p id="welcome">Welcome<br>To<br>Bright Mind</p>
         <p id="para2">Learn with<br>Bright Mind and Bright<br>like a sun</p>
-        <div id="journey"><a href="./courses.html">
+        <div id="journey"><a href="./courses.php">
                 <p id="para3">Start Your Journey</p>
             </a></div>
 
@@ -68,7 +68,7 @@
     </div>
 
     <div id="join">
-        <a href="./login.html">
+        <a href="./login.php">
             <p id="joinusbtn">Join Us</p>
         </a>
     </div>

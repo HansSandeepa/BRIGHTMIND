@@ -140,7 +140,7 @@ if(isset($_GET['delete'])) {
     <a href = ""><p>>>Add Course</p></a>
     <a href = ""><p>>>Manage Student</p></a>
     <a href = "./add-instructor.php"><p>>>Add Instructor</p></a>
-    <a href = ""><p>>>Show Feedback</p></a>
+    <a href = "./contactinterface.php"><p>>>Show Feedback</p></a>
 
 </body>
 </html>

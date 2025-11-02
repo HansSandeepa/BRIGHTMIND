@@ -16,7 +16,7 @@ if(!mysqli_query($conn, $sql)) {
 
 //insert data to table
 $username = "hirusha";
-$password = md5("h123");
+$password = md5("123");
 
 $escapedusername = mysqli_real_escape_string($conn, $username);
 $escapedupassword = mysqli_real_escape_string($conn, $password);
