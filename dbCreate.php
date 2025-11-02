@@ -1,7 +1,7 @@
 <?php
 $server = 'localhost';
 $username = 'root';
-$password = '';     //තමන්ගෙ database එකේ password එක දාන්න
+$password = '1234';     //තමන්ගෙ database එකේ password එක දාන්න
 
 $conn = mysqli_connect($server, $username, $password);
 
@@ -14,6 +14,7 @@ $createDb = "CREATE DATABASE IF NOT EXISTS brightmindDb";
 if (mysqli_query($conn, $createDb)) {
     
     include_once './mysql/Instructor.php';    //create lecture table (apurwa)
+    require_once './mysql/courses.php';
     
     header("Location: index.php");
 } else {
