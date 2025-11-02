@@ -1,9 +1,9 @@
 <?php
 $server = 'localhost';
 $username = 'root';
-$password = '';     //තමන්ගෙ database එකේ password එක දාන්න
-$port = 3307;
-$conn = mysqli_connect($server, $username, $password,null,$port);
+$password = '1234';     //තමන්ගෙ database එකේ password එක දාන්න
+
+$conn = mysqli_connect($server, $username, $password);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
