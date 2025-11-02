@@ -2,7 +2,7 @@
 document.querySelectorAll('.paid_content').forEach(
     function (course) {
         course.addEventListener('click', function () {
-            window.location.href = './paid_courses.html';
+            window.location.href = './paid_courses.php';
         });
     });
 
