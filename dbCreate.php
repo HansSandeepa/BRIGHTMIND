@@ -1,7 +1,7 @@
 <?php
 $server = 'localhost';
 $username = 'root';
-$password = '1234';    //තමන්ගෙ database එකේ password එක දාන්න    
+$password = '1234';     //තමන්ගෙ database එකේ password එක දාන්න
 
 $conn = mysqli_connect($server, $username, $password);
 
