@@ -1,129 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include_once("./dbconn.php");
+session_start();
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bright Mind</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/loginn.css">
-
-</head>
-
-<body>
-    <!-- side navgation bar -->
-    <div class="sidebar">
-
-        <!-- side bar logo and close button -->
-        <div class="sidebarHeader">
-
-            <div class="logo" id="sideLogo">
-                <img src="./assets/lightbulb 1.png" alt="Logo" id="sideLogoImg" class="logoImg">
-                <p class="logoText" id="sidebarLogoText">Bright Mind</p>
-            </div>
-
-            <button id="closeBtn" class="closeBtn">
-                <img src="./assets/close.svg" alt="closebtn">
-            </button>
-
-        </div>
-
-        <!-- sidebar content -->
-        <div class="sidebarContent">
-            <div class="topContent">
-                <ul class="sideBarLists">
-
-                    <li class="sideBarList">
-                        <a href="./index.html" class="nav-link">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./courses.html" class="nav-link">
-                            Courses
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./Instructor page.html" class="nav-link">
-                            Instructors
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./about.html" class="nav-link">
-                            About Us
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./contactUs.html" class="nav-link">
-                            Contact Us
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="bottomContent">
-                <ul class="sideBarLists">
-
-                    <li class="sideBarList" id="selectedNavItem">
-                        <a href="./login.html" class="nav-link">
-                            Log In
-                        </a>
-                    </li>
-
-                    <li class="sideBarList">
-                        <a href="./sign.html" class="nav-link">
-                            Sign In
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-        <div class="copyright">
-            &copy; <span class="year"></span> Bright Mind.
-        </div>
-
-    </div>
-
-    <!-- overlay that emerges with the navbar -->
-    <section id="overlay">
-        <!-- do not delete this -->
-    </section>
+if(isset($_POST["login"])){
+    $_SESSION['username'] = $_POST['name'];
+    $name = $_POST['name'];
+    $password = $_POST['pwd'];
+    
+    $sql = "SELECT upassword FROM user WHERE user_name='$name'";
+    $result = mysqli_query($conn, $sql);
+    
+    if($result && mysqli_num_rows($result) > 0) {
+        $user = mysqli_fetch_assoc($result);
+        if($user['upassword'] == $password) {
+            $_SESSION['username'] = $name;
+            header("Location: Dashboard.php");
+            exit();
+        } else {
+            echo "<script>alert('Invalid password!');</script>";
+        }
+    } else {
+        echo "<script>alert('User not found!');</script>";
+    }
+}
+?>
 
 
-    <!-- HEADER SECTION -->
-    <header>
-        <button id="navbarBtn">
-            <img src="./assets/navbar button.png" alt="navbtn">
-        </button>
+<?php
+include_once("headerFooter/header.php");
+?>
 
-        <div class="logo" id="topLogo">
-            <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
-            <p class="logoText">Bright Mind</p>
-        </div>
+<script>
+    // Add page-specific CSS after header loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = './css/loginn.css';
+        document.head.appendChild(css);
+    });
+</script>
 
-        <div id="loginBtnSection">
-            <a href="./login.html">Log In</a>
-            <a href="./sign.html">Sign In</a>
-            <a href="admin.html" class="nav-btn admin-btn" id="adminBtn">Admin Panel</a>
-        </div>
-    </header>
-    <div id="headerWrapper">
-        <!-- do not delete this element -->
-    </div>
-
-
-    <!-- CONTECT SECTION -->
     <section>
         <div id="imgContainer">
             <!--left side image-->
@@ -132,19 +48,19 @@
 
         <!--form part-->
         <div id="formContainer">
-            <form class="form" onsubmit="func(event)">
+            <form class="form" method='POST' onsubmit="func(event)">
 
                 <div class="sigin">
                     <h1>LOGIN PAGE</h1> <br />
                     <label>User Name:</label><br />
-                    <input type="text" name="username" id="username" required><br /><br />
+                    <input type="text" name="name" id="username" required><br /><br />
 
                     <label>Password</label><br />
-                    <input type="password" name="password" id="password" required><br /><br />
+                    <input type="password" name="pwd" id="password" required><br /><br />
 
                     <label><input class="checkbox" type="checkbox" name="password">Remeber me</label>
 
-                    <button type="submit"><label class="sumbit">LOGIN</label></button>
+                    <button type="submit" name='login'><label class="sumbit">LOGIN</label></button>
                     <br />
 
 
@@ -160,7 +76,7 @@
 
                     <div class="end">
                         Creat a New Account<br />
-                        <a href="sign.html">SIGN UP </a>
+                        <a href="sign.php">SIGN UP </a>
                     </div>
                     <p id="demo"></p>
                 </div>
@@ -168,52 +84,6 @@
         </div>
     </section>
 
-    <!-- FOOTER SECTION -->
-    <footer>
-
-        <div id="footerWrapper">
-            <div id="footerNavigation">
-                <h2 class="footerTitles">Navigation</h2>
-                <div class="footerNavigationLinks" id="startLinks">
-                    <a href="./index.html">Home</a>
-                    <a href="./courses.html">Courses</a>
-                    <a href="./Instructor page.html">Instructors</a>
-                </div>
-                <div class="footerNavigationLinks" id="endLinks">
-                    <a href="./Dashboard.html">Student Profile</a>
-                    <a href="./about.html">About Us</a>
-                    <a href="./contactUs.html">Contact Us</a>
-                </div>
-            </div>
-
-            <div class="logo" id="bottomLogo">
-                <img src="./assets/lightbulb 1.png" alt="Logo" class="logoImg">
-                <p class="logoText">Bright Mind</p>
-            </div>
-
-            <div id="socialMediaLinksSegment">
-                <h2 class="footerTitles">Follow Us</h2>
-                <div id="socialMediaLinks">
-                    <a href="https://www.facebook.com/"><img src="./assets/facebook.svg" alt="Facebook"></a>
-                    <a href="https://www.linkedin.com/"><img src="./assets/linkedin.svg" alt="LinkedIn"></a>
-                    <a href="https://github.com/HansSandeepa/BRIGHTMIND"><img src="./assets/github.svg"
-                            alt="Github"></a>
-                    <a href="https://www.instagram.com/"><img src="./assets/instagram.svg" alt="Instagram"></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="copyright">
-            &copy; <span class="year"></span> Bright Mind.
-        </div>
-
-    </footer>
-
-    <!-- import javascript files here -->
-    <script src="./js/navbar.js"></script>
-    <script src="./js/getYear.js"></script>
-    <script src="./js/loginjava.js"></script>
-
-</body>
-
-</html>
+<?php
+include_once("headerFooter/footer.php");
+?>
