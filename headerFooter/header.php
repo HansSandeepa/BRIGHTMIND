@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/home.css">
+
 </head>
 
 
@@ -117,7 +118,7 @@
             <a href="./login.php">Log In</a>
             <a href="./sign.php">Sign In</a>
             <!-- add Admin button near other nav/login buttons -->
-            <a href="admin.php" class="nav-btn admin-btn" id="adminBtn">Admin Panel</a>
+            <a href="adminlogin.php" class="nav-btn admin-btn" id="adminBtn">Admin Panel</a>
         </div>
     </header>
     <div id="headerWrapper">

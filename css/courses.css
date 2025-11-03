@@ -45,7 +45,9 @@ body {
 
 #excourses {
     display: flex;
-
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
 }
 
 #Fone {
@@ -241,6 +243,115 @@ body {
 
 #freecourses {
     display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding-bottom: 20px; /* keep your inline padding if needed */
+}
+
+/* Force four items per row, remove ID margins that break layout */
+#freecourses .free-content {
+    flex: 0 0 calc((100% - 120px) / 4); /* 4 items, subtract total gap (3 * 40px) */
+    max-width: calc((100% - 120px) / 4);
+    box-sizing: border-box;
+    margin: 0; /* override #f1/#f2 etc margins */
+}
+
+/* ensure images fill the card consistently */
+#freecourses .free-content img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Paid section: 4 items per row, wrap the 5th */
+#excourses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+#excourses .paid_dynamic,
+#excourses .paid-content {
+    flex: 0 0 calc((100% - 120px) / 4);
+    max-width: calc((100% - 120px) / 4);
+    box-sizing: border-box;
+    margin: 0; /* override existing ID margins */
+    background: #fff;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+}
+
+/* same image and text rules as free-content */
+#excourses .paid-content img,
+#excourses .paid_dynamic img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#excourses .paid-content p,
+#excourses .paid_dynamic p {
+    margin: 12px 10px;
+    text-align: center;
+    color: rgb(104,86,86);
+}
+
+/* hover behavior */
+#excourses .paid-content:hover,
+#excourses .paid_dynamic:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.28);
+}
+
+/* Responsive fallbacks (same as free) */
+@media (max-width: 1000px) {
+    #freecourses .free-content {
+        flex: 0 0 calc((100% - 40px) / 2);
+        max-width: calc((100% - 40px) / 2);
+    }
+    #excourses .paid_dynamic,
+    #freecourses .free-content {
+        flex: 0 0 calc((100% - 40px) / 2);
+        max-width: calc((100% - 40px) / 2);
+    }
+}
+@media (max-width: 520px) {
+    #freecourses .free-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #excourses .paid_dynamic,
+    #freecourses .free-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.free-content {
+    flex: 0 0 calc(25% - 40px); /* four items per row (subtract gap) */
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* make images inside generated items behave consistent with other f#img rules */
+.free-content img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* optional: tighten text spacing inside generated items */
+.free-content p {
+    margin: 12px 10px;
+    text-align: center;
+    color: rgb(104,86,86);
 }
 
 #f1 {

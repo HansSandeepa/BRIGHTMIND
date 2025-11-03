@@ -13,7 +13,8 @@ $createDb = "CREATE DATABASE IF NOT EXISTS brightmindDb";
 
 if (mysqli_query($conn, $createDb)) {
     
-    include_once './mysql/Instructor.php';    
+    include_once './mysql/Instructor.php';    //create lecture table (apurwa)
+    require_once './mysql/coursesData.php';
     
     header("Location: index.php");
 } else {
