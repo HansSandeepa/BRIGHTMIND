@@ -2,8 +2,15 @@
 require_once 'dbConn.php';
 require_once './headerFooter/header.php';
 ?>
-
-
+<script>
+    // Add page-specific CSS after header loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = './css/feedback_view.css';
+        document.head.appendChild(css);
+    });
+</script>
 
      <!-- Feedback View -->
       

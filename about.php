@@ -1,7 +1,20 @@
 <?php
     require_once './headerFooter/header.php';
 ?>
+<script>
+    // Add page-specific CSS after header loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = './css/about.css';
+        document.head.appendChild(css);
 
+        const css2 = document.createElement('link');
+        css2.rel = 'stylesheet';
+        css2.href = './css/feedback.css';
+        document.head.appendChild(css2);
+    });
+</script>
     <!-- full content -->
     <div class="fullContent">
         <!-- About section image -->
