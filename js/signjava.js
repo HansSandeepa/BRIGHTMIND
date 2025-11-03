@@ -1,41 +1,73 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('signupForm');
+    const errorDiv = document.getElementById('errorMessages');
 
-function validateForm(e) {
-    e.preventDefault(); // Prevent the default form submission behavior
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Always prevent default first
+        errorDiv.innerHTML = ''; // Clear previous errors
 
-    var username = document.getElementById('username').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var password = document.getElementById('password').value;
-    var confirm = document.getElementById('confirm-password').value;
-    var terms = document.getElementById('checkbox').checked;
+        const username = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const confirm = document.getElementById('confirm-password').value;
+        const terms = document.getElementById('checkbox').checked;
 
-    if (!username || !email || !password || !confirm) {
-        alert("All fields are required.");
-        return false;
-    }
+        let isValid = true;
+        let errors = [];
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return false;
-    }
+        // Username validation
+        if (!username) {
+            errors.push("Username is required");
+            isValid = false;
+        } else if (username.length < 3) {
+            errors.push("Username must be at least 3 characters long");
+            isValid = false;
+        }
 
-    if (password.length < 6) {
-        alert("Password must be at least 6 characters long.");
-        return false;
-    }
+        // Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) {
+            errors.push("Email is required");
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            errors.push("Please enter a valid email address");
+            isValid = false;
+        }
 
-    if (password !== confirm) {
-        alert("Passwords do not match.");
-        return false;
-    }
+        // Password validation
+        if (!password) {
+            errors.push("Password is required");
+            isValid = false;
+        } else if (password.length < 6) {
+            errors.push("Password must be at least 6 characters long");
+            isValid = false;
+        }
 
-    if (!terms) {
-        alert("You must agree to the Terms and Conditions.");
-        return false;
-    }
+        // Confirm password
+        if (password !== confirm) {
+            errors.push("Passwords do not match");
+            isValid = false;
+        }
 
-    alert("Form submitted successfully!");
-    window.location.href = "Dashboard.html"; // Redirect to the DASHBOARD page after successful submission
-    return true;
-}
+        // Terms checkbox
+        if (!terms) {
+            errors.push("You must agree to the Terms and Conditions");
+            isValid = false;
+        }
+
+        // Display errors or submit form
+        if (!isValid) {
+            errors.forEach(error => {
+                const errorP = document.createElement('p');
+                errorP.textContent = error;
+                errorDiv.appendChild(errorP);
+            });
+            return false;
+        }
+
+        // If validation passes, submit the form
+        form.submit();
+        return true;
+    });
+});
 
